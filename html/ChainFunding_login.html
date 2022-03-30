@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/ChainFunding_login.css">
+    <script src="../js/ChainFunding_login.js"></script>
+    <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
+    <title>ChainFunding</title>
+</head>
+<body>
+
+    <header>
+        <span style="font-size: 50px;">LOGO</span>
+        <span style="font-size: 50 px;">集資</span>
+        
+        <button id="bars1" class="fa-solid fa-bars" style="color: black;"></button>
+        
+        <input type="text" style="font-size: 25px;"  placeholder="集資搜尋">
+        <i class="fa-solid fa-bell" style="font-size: 50px;color:darkorange;"></i>
+        <span>通知</span>
+        <i class="fa-solid fa-globe" style="font-size: 50px;color: blue;"></i>
+        <span>語言</span>
+    <select style="font-size: 50px;">
+        <option value="">繁體中文</option>
+        <option value="">English</option>
+    </select>
+        <i class="fa-solid fa-user" style="font-size: 50px;color:grey;"></i>
+        <span id="user_icon">帳戶</span>
+        <select id="user_menu" style="font-size: 30px;">
+            <option value="">個人資料</option>
+            <option value="">帳戶資產</option>
+            <option value="">追蹤清單</option>
+            <option value="">登出</option>
+        </select>
+    </header>
+    <table id="SearchConditions" style="text-align: center" border="1">
+        <tr>
+            <td>已發起集資</td>
+            <td class="cb">
+                是<input type="checkbox">
+                否<input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td>幣種</td>
+            <td class="cb">
+                Coin1<input type="checkbox">
+                Coin2<input type="checkbox">
+                Coin3<input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td>價格</td>
+            <td>
+                <select>
+                    <option value="">100$~1000$</option>
+                    <option value="">1000$~10000$</option>
+                    <option value="">10000$~100000$</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>集資發起人評價</td>
+            <td class="cb">
+                1star<input type="checkbox">
+                2star<input type="checkbox">
+                3star<input type="checkbox">
+                4star<input type="checkbox">
+                5star<input type="checkbox">
+            </td>
+        </tr>
+    </table>
+    <textarea name="" id="" cols="200" rows="35"></textarea>
+    <footer>
+
+            
+            <span class="footer-menu">
+            <div>
+                <span class="footer-text">客服中心</span>
+                <span>|</span>
+                <span class="footer-text">應用程式下載</span>
+                <span>|</span>
+                <span class="footer-text">社群媒體相關</span>
+            </div>
+
+            <div>
+                <span>關於我們</span>
+                <span>|</span>
+                <a href="#"><i class="fa-brands fa-app-store-ios" style="color:blue;"></i></a>
+                <span>App Store</span>
+                <span>|</span>
+                <a href="#"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
+                <span>Instagram</span>
+            </div>
+            <div>
+                <span>使用教學</span>
+                <span>|</span>
+                <a href="#"><i class="fa-brands fa-google-play" style="color:green;"></i></a>
+                <span>Play Store</span>
+                <span>|</span>
+                <a href="#"><i class="fab fa-facebook" style="color: blue;"></i></a>
+                <span>Facebook</span>
+                <!--<a href="#"><i class="fab fa-twitter"   style="color:aqua;"></i></a>
+                //<span>Twitter</span> -->
+            </div>
+            <div class="footer-text">Copyright © 2022 ChainFunding 保留一切權利.</div>
+            </span>
+        </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
