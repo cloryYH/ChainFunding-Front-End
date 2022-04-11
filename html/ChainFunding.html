@@ -12,18 +12,23 @@
 
     <header>
         <span style="font-size: 50px;">LOGO</span>
-        <span style="font-size: 50 px;">集資</span>
+        <span style="font-size: 50px;">集資</span>
+        <span class="header_search">
+            <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
+            <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
+            <button class="header_search_button"><img src="../images/search.png" alt=""></button>
+        </span>
         
-        <button id="bars1" class="fa-solid fa-bars" style="color: black;"></button>
-        
-        <input type="text" style="font-size: 25px;"  placeholder="集資項目搜尋">
-        <i class="fa-solid fa-globe" style="font-size: 50px;color: blue;"></i>
-        <span>語言</span>
-    <select style="font-size: 50px;">
-        <option value="">繁體中文</option>
-        <option value="">English</option>
-    </select>
-        <a href="./login.html">用戶登入</a>
+    <i class="fa-solid fa-globe" style="font-size: 36px;color: blue;"></i>
+    <span class="dropdown">
+        <button class="dropbtn">語言</button>
+        <div class="dropdown-content">
+          <a href="#">繁體中文</a>
+          <a href="#">English</a>
+        </div>
+    </span>
+
+    <a href="./login.html">用戶登入</a>
     </header>
     <table id="SearchConditions" style="text-align: center" border="1">
         <tr>
@@ -62,10 +67,28 @@
             </td>
         </tr>
     </table>
-    <textarea name="" id="" cols="200" rows="35"></textarea>
-    <footer>
 
-            
+	<!-- Product -->
+    <table class="product box" border="1">
+	<tr>
+        <td>
+            <div class="product" id="pro1">
+			  <div class="product_image"><a href=""><img src="../images/b1.jpg" alt=""></a></div>
+			  <div class="product_name"><a href="">Name</a></div>
+			  <div class="product_category">Category</div>
+            </div>
+        </td>
+        <td>
+            <div class="product" id="pro1">
+			  <div class="product_image"><a href=""><img src="../images/b2.png" alt=""></a></div>
+			  <div class="product_name"><a href="">Name</a></div>
+			  <div class="product_category">Category</div>
+            </div>
+        </td>
+    </tr>
+    </table>
+    
+    <footer>   
         <span class="footer-menu">
         <div>
             <span class="footer-text">客服中心</span>
