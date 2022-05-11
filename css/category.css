@@ -5,15 +5,15 @@
     display:none;
 }
 div{
-    font-size: 40px;
+    font-size: 30px;
     font-family:Microsoft JhengHei;
 }
 span{
-    font-size: 40px;
+    font-size: 30px;
     font-family:Microsoft JhengHei;
 }
 a{
-    font-size: 40px;
+    font-size: 30px;
     font-family:Microsoft JhengHei;
 }
 .header_search
@@ -168,4 +168,8 @@ a{
     height:20px;
     width:40px;
     background-color: #00FA9A;
+}
+.footer-menu{
+    text-align: center;
+    font-size: 30px;
 }
