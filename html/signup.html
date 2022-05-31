@@ -11,19 +11,19 @@
     <h1 >ChainFunding註冊</h1>
 
     <table class="signup" style="text-align: center" border="1">
-        <tr>
+        <tr id="username">
             <td>使用者名稱</td>
             <td><input type="text"></td>
         </tr>
-        <tr>
+        <tr id="email">
             <td>電子信箱</td>
             <td><input type="text"></td>
         </tr>
-        <tr>
+        <tr id="password1">
             <td>密碼</td>
             <td><input type="password"></td>
         </tr>
-        <tr>
+        <tr id="password2">
             <td>確認密碼</td>
             <td><input type="password"></td>
         </tr>
@@ -37,11 +37,12 @@
             <td>輸入驗證碼</td>
             <td><input type="text"></td>
         </tr>
-        <tr>
+        <tr id="SubmitBotton">
         <td><input type="checkbox">我已確認以上資訊皆為正確</td>
-        <td><input type="submit"></td>
+        <td><input type="submit" onclick="registration()"></td>
         </tr>
     </table>
 </div>
+<script src="../js/api.js"></script>
 </body>
 </html>
