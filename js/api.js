@@ -14,7 +14,7 @@ var data ={
 $.ajax({
     url: base_url+'/rest-auth/registration/',
     type: 'post',
-    contentType: 'application/json; charset=utf-8'
+    contentType: 'application/json; charset=utf-8',
     data:JSON.stringify(data)
 })
 }
@@ -31,7 +31,7 @@ function login(){
     $.ajax({
         url: base_url+'/rest-auth/registration/',
         type: 'post',
-        contentType: 'application/json; charset=utf-8'
+        contentType: 'application/json; charset=utf-8',
         data:JSON.stringify(data)
     })
     }
