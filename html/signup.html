@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/signup.css">
+    <!-- <link rel="stylesheet" href="../css/signup.css"> -->
     <title>ChainFunding_signup</title>
+    <script src="../js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h1 >ChainFunding註冊</h1>
+    <h1>ChainFunding註冊</h1>
+    <h1 id="send_data">abcd</h1>
 
     <table class="signup" style="text-align: center" border="1">
-        <tr id="username">
+        <tr>
             <td>使用者名稱</td>
-            <td><input type="text"></td>
+            <td><input id="username" type="text"></td>
         </tr>
-        <tr id="email">
+        <tr>
             <td>電子信箱</td>
-            <td><input type="text"></td>
+            <td><input id="email" type="text"></td>
         </tr>
-        <tr id="password1">
+        <tr >
             <td>密碼</td>
-            <td><input type="password"></td>
+            <td><input id="password1" type="password"></td>
         </tr>
-        <tr id="password2">
+        <tr>
             <td>確認密碼</td>
-            <td><input type="password"></td>
+            <td><input id="password2" type="password"></td>
         </tr>
-        <tr id="SubmitBotton">
-        <td><input type="checkbox">我已確認以上資訊皆為正確</td>
-        <td><input type="submit" onclick="registration()"></td>
-        </tr>
+        <input type="checkbox">我已確認以上資訊皆為正確
+        <input  id="SubmitBotton" type="submit">
     </table>
 </div>
-<script src="../js/api.js"></script>
+<script>$("#submitbotton").click(registration())</script>
 </body>
 </html>

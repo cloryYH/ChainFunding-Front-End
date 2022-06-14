@@ -1,37 +1,52 @@
-var base_url = "http://140.124.93.21:5900/swagger/"
+var base_url = "http://140.124.93.21:5900"
 
-function registration(){
-var username = $('#username').val();
-var email = $('#email').val();
-var password1 = $('#password1').val();
-var password2 = $('#password2').val();
-var data ={
-    "username":username,
-    "email":email,
-    "password1":password1,
-    "password2":password2
-}
-$.ajax({
-    url: base_url+'/rest-auth/registration/',
-    type: 'post',
-    contentType: 'application/json; charset=utf-8',
-    data:JSON.stringify(data)
-})
+registration = function() {
+    var username = $('#username').val();
+    var email = $('#email').val();
+    var password1 = $('#password1').val();
+    var password2 = $('#password2').val();
+    var data = {
+        "username": username,
+        "email": email,
+        "password1": password1,
+        "password2": password2
+    }
+    $.ajax({
+        url: base_url + '/rest-auth/registration/',
+        type: 'post',
+        contentType: 'application/json; charset=utf-8',
+        datatype: JSON,
+        error: function () {
+            alert('Ajax request 發生錯誤');
+        },
+        success: function (response) {
+            $('#send_data').html(response);
+        }
+    })
+    // console.log(data)
+    // alert(data)
 }
 
-function login(){
+
+function login() {
     var username = $('#username').val();
     var email = $('#email').val();
     var password = $('#password').val();
-    var data ={
-        "username":username,
-        "email":email,
-        "password":password,
+    var data = {
+        "username": username,
+        "email": email,
+        "password": password,
     }
     $.ajax({
-        url: base_url+'/rest-auth/registration/',
+        url: base_url + '/rest-auth/login/',
         type: 'post',
         contentType: 'application/json; charset=utf-8',
-        data:JSON.stringify(data)
+        datatype: JSON,
+        error: function () {
+            alert('Ajax request 發生錯誤');
+        },
+        success: function () {
+            $('#send_data').html(response);
+        }
     })
-    }
+}
