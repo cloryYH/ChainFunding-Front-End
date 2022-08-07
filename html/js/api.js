@@ -1,6 +1,6 @@
 var base_url = "http://140.124.93.21:5900"
 
-registration = function() {
+ function Registration() {
     var username = $('#username').val();
     var email = $('#email').val();
     var password1 = $('#password1').val();
@@ -15,20 +15,19 @@ registration = function() {
         url: base_url + '/rest-auth/registration/',
         type: 'post',
         contentType: 'application/json; charset=utf-8',
-        datatype: JSON,
-        error: function () {
-            alert('Ajax request 發生錯誤');
-        },
+        data: JSON.stringify(data),
+
         success: function (response) {
             $('#send_data').html(response);
+        },
+        error: function (xhr) {
+            alert('Ajax request 發生錯誤');
         }
     })
-    // console.log(data)
-    // alert(data)
 }
 
 
-function login() {
+function Login() {
     var username = $('#username').val();
     var email = $('#email').val();
     var password = $('#password').val();
@@ -41,12 +40,13 @@ function login() {
         url: base_url + '/rest-auth/login/',
         type: 'post',
         contentType: 'application/json; charset=utf-8',
-        datatype: JSON,
-        error: function () {
-            alert('Ajax request 發生錯誤');
-        },
-        success: function () {
+        data: JSON.stringify(data),
+
+        success: function (response) {
             $('#send_data').html(response);
+        },
+        error: function (xhr) {
+            alert('Ajax request 發生錯誤');
         }
     })
 }
