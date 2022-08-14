@@ -11,6 +11,19 @@ var base_url = "http://140.124.93.21:5900"
         "password1": password1,
         "password2": password2
     }
+    var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+    var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    if (reg1.test(password1)&&(password1==password2)&&(reg2.test(email))){
+       //提交註冊
+    }
+    else if (!reg1.test(password1)){
+        alert("僅支持6-16位密碼，必須含有字母和數字");}
+    else if (!reg2.test(email)){
+        alert("不是有效的電子郵箱格式");}
+    else if (password1!=password2){
+        alert("兩次密碼輸入不一致");
+    }
+    
     $.ajax({
         url: base_url + '/rest-auth/registration/',
         type: 'post',
