@@ -26,7 +26,7 @@ var base_url = "http://140.124.93.21:5900"
     
     $.ajax({
         url: base_url + '/rest-auth/registration/',
-        type: 'post',
+        type: 'POST',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
 
@@ -51,7 +51,7 @@ function Login() {
     }
     $.ajax({
         url: base_url + '/rest-auth/login/',
-        type: 'post',
+        type: 'POST',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
 
