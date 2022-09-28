@@ -11,6 +11,7 @@
         "password1": password1,
         "password2": password2
     }
+    console.log(data)
     // var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
     // var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
     // if (reg1.test(password1)&&(password1==password2)&&(reg2.test(email))){
@@ -46,22 +47,23 @@
 // form.append("password1", "Curtis18555");
 // form.append("password2", "Curtis18555");
 
-var settings = {
-  "url": "http://140.124.93.21:5900/rest-auth/registration/",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    //"Cookie": "csrftoken=UQ4gXcWgh2en3YOoDpMTK0wVQW85FWnAl32nQs2AlmsnjuQhgrd6tLSFXL4wmrIu; messages=.eJxtjEEKwyAQAL8inq2oUZPeAn1GlGDTNViqQnT_33rvbZiB2Ta67-9Wy56htXACZYIpweijlpiuHHqqhcAth_QhDUonvZLQpJr0eg7Jj5o59ezvxzDq0CopHBp1jw41gCEHXj01KRXnDme7aIcLhOeo8TXM_GMjrXE4CaGo91_UqjUJ:1oYNCJ:ME7jg4PAWlMOxkBazb-nM3pMaO0Zs3CpELo4dly1Gwc; sessionid=w8s1otwup8rps3wygvx4wcereor61ejl",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "X-Content-Type-Options": "nosniff"
-},
-  
-  "data": data
-};
+    var settings = {
+    //   "url": "http://140.124.93.21:5900/rest-auth/registration/",
+        "url": "http://140.124.93.21:5900/rest-auth/registration/",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            //"Cookie": "csrftoken=UQ4gXcWgh2en3YOoDpMTK0wVQW85FWnAl32nQs2AlmsnjuQhgrd6tLSFXL4wmrIu; messages=.eJxtjEEKwyAQAL8inq2oUZPeAn1GlGDTNViqQnT_33rvbZiB2Ta67-9Wy56htXACZYIpweijlpiuHHqqhcAth_QhDUonvZLQpJr0eg7Jj5o59ezvxzDq0CopHBp1jw41gCEHXj01KRXnDme7aIcLhOeo8TXM_GMjrXE4CaGo91_UqjUJ:1oYNCJ:ME7jg4PAWlMOxkBazb-nM3pMaO0Zs3CpELo4dly1Gwc; sessionid=w8s1otwup8rps3wygvx4wcereor61ejl",
+            "Content-Type": "application/x-www-form-urlencoded",
+            //"X-Content-Type-Options": "nosniff"
+        },
+    
+        "data": data
+    };
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 
 // $.ajax({
 //         success: function (response) {
