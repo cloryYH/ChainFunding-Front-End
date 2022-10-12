@@ -54,7 +54,7 @@
         "timeout": 0,
         "headers": {
             //"Cookie": "csrftoken=UQ4gXcWgh2en3YOoDpMTK0wVQW85FWnAl32nQs2AlmsnjuQhgrd6tLSFXL4wmrIu; messages=.eJxtjEEKwyAQAL8inq2oUZPeAn1GlGDTNViqQnT_33rvbZiB2Ta67-9Wy56htXACZYIpweijlpiuHHqqhcAth_QhDUonvZLQpJr0eg7Jj5o59ezvxzDq0CopHBp1jw41gCEHXj01KRXnDme7aIcLhOeo8TXM_GMjrXE4CaGo91_UqjUJ:1oYNCJ:ME7jg4PAWlMOxkBazb-nM3pMaO0Zs3CpELo4dly1Gwc; sessionid=w8s1otwup8rps3wygvx4wcereor61ejl",
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
             //"X-Content-Type-Options": "nosniff"
         },
     
