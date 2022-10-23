@@ -1,20 +1,32 @@
+header{
+    background-color:white;
+}
+html{
+    background-color:azure;
+}
 #SearchConditions{
     font-size:30px;
     font-family:Microsoft JhengHei;
-    background-color: lightgray;
     display:none;
+    text-align: center;
 }
 div{
     font-size: 30px;
     font-family:Microsoft JhengHei;
 }
 span{
-    font-size: 30px;
+    font-size: 20px;
     font-family:Microsoft JhengHei;
 }
 a{
     font-size: 30px;
     font-family:Microsoft JhengHei;
+}
+.product_box{
+    border: solid 1px #4a4a4a;
+    margin-left:auto; 
+    margin-right:auto;
+    text-align: center;
 }
 .header_search
 {
@@ -171,6 +183,7 @@ a{
 }
 .footer-menu{
     text-align: center;
-    font-size: 30px;
 }
-
+.footer-text{
+    text-align: center;
+}
