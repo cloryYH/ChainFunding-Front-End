@@ -80,13 +80,20 @@
 
 
 function Login() {
-    var username = $('#username').val();
-    var email = $('#email').val();
+    var account = $('#account').val();
     var password = $('#password').val();
-    var data = {
-        "username": username,
-        "email": email,
-        "password": password,
+    var isEmail=false;//之後寫判斷部分的程式
+    if (isEmail){
+        var data = {
+            "email": account,
+            "password": password,
+        }
+    }
+    else{
+        var data = {
+            "username": account,
+            "password": password,
+        }
     }
     $.ajax({
         url: base_url + '/rest-auth/login/',
