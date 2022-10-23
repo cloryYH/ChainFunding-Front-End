@@ -96,9 +96,9 @@ function Login() {
         }
     }
     $.ajax({
-        url: base_url + '/rest-auth/login/',
+        url: "http://140.124.93.21:5900/rest-auth/login/",
         type: 'POST',
-        contentType: 'application/json; charset=utf-8',
+        contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
 
         success: function (response) {
