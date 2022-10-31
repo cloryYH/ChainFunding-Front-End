@@ -1,4 +1,5 @@
-var base_url = "http://140.124.93.21:5900"
+var base_url = "https://llw.tw/api/v1"
+//var base_url = "http://llw.tw:8756"
 var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
 var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
@@ -61,7 +62,10 @@ function Login() {
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
-
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
         success: function (response) {
             $('#send_data').html(response);
         },
