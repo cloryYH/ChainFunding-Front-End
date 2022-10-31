@@ -1,6 +1,8 @@
 var base_url = "http://140.124.93.21:5900"
+var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
+var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
- function Registration() {
+function Registration() {
     var username = $('#username').val();
     var email = $('#email').val();
     var password1 = $('#password1').val();
@@ -11,9 +13,8 @@ var base_url = "http://140.124.93.21:5900"
         "password1": password1,
         "password2": password2
     }
-    console.log(data)
-    var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
-    var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    console.log(data);
+
     if (reg1.test(password1)&&(password1==password2)&&(reg2.test(email))){
     }
     else if (!reg1.test(password1)){
@@ -43,8 +44,7 @@ var base_url = "http://140.124.93.21:5900"
 function Login() {
     var account = $('#account').val();
     var password = $('#password').val();
-    var isEmail=false; //之後寫判斷部分的程式
-    if (isEmail){
+    if (reg2.test(account)){
         var data = {
             "email": account,
             "password": password,
