@@ -9,26 +9,21 @@
     <title>ChainFunding</title>
 </head>
 <body>
-
-    <header>
-        <span style="font-size: 50px;">LOGO</span>
-        <span style="font-size: 50px;">集資</span>
+    <header style="text-align:center">
+        <span><img src="../html/images/logo.jpeg" align="center"></span>
         <span class="header_search">
             <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
             <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
             <button class="header_search_button"><img src="../html/images/search.png" alt=""></button>
         </span>
-        
-    <i class="fa-solid fa-globe" style="font-size: 36px;color: blue;"></i>
     <span class="dropdown">
-        <button class="dropbtn">語言</button>
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="font-size: 36px;color:navy;"></i></button>
         <div class="dropdown-content">
           <a href="#">繁體中文</a>
           <a href="#">English</a>
         </div>
     </span>
-
-    <a href="./login.html">用戶登入</a>
+    <a href="./login.html">登入/註冊</a>
     </header>
     <table id="SearchConditions" style="text-align: center" border="1">
         <tr>
@@ -69,15 +64,22 @@
     </table>
     <div class="homepage-firstpic">
         <div class="slogan">從這裡開始你的NFT之旅</div>
-        <button class="start-search">搜尋交易</button>
+        <a href="./category.html"><button class="start-search">搜尋交易</button></a>
     </div>
     <div class="popular-slogan">近期熱門</div>
 	<!-- Product -->
-    <table class="product box" border="1">
+    <table class="product_box" border="1">
 	<tr>
         <td>
             <div class="product" id="pro1">
 			  <div class="product_image"><a href=""><img src="../html/images/b1.jpg" alt=""></a></div>
+			  <div class="product_name"><a href="">Name</a></div>
+			  <div class="product_category">Category</div>
+            </div>
+        </td>
+        <td>
+            <div class="product" id="pro1">
+			  <div class="product_image"><a href=""><img src="../html/images/b2.png" alt=""></a></div>
 			  <div class="product_name"><a href="">Name</a></div>
 			  <div class="product_category">Category</div>
             </div>
@@ -97,36 +99,22 @@
         <div>
             <span class="footer-text">客服中心</span>
             <span>|</span>
-            <span class="footer-text">應用程式下載</span>
-            <span>|</span>
-            <span class="footer-text">社群媒體相關</span>
-        </div>
-
-        <div>
             <span>關於我們</span>
             <span>|</span>
-            <a href="#"><i class="fa-brands fa-app-store-ios" style="color:blue;"></i></a>
-            <span>App Store</span>
-            <span>|</span>
-            <a href="#"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
-            <span>Instagram</span>
+            <span>使用教學</span>
         </div>
         <div>
-            <span>使用教學</span>
+            <a href="https://www.instagram.com/chainfunding_official/"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
+            <span>Instagram</span>
             <span>|</span>
-            <a href="#"><i class="fa-brands fa-google-play" style="color:green;"></i></a>
-            <span>Play Store</span>
-            <span>|</span>
-            <a href="#"><i class="fab fa-facebook" style="color: blue;"></i></a>
+            <a href="https://www.facebook.com/ChainFunding-103982252340175/"><i class="fab fa-facebook" style="color: blue;"></i></a>
             <span>Facebook</span>
-            <!--<a href="#"><i class="fab fa-twitter"   style="color:aqua;"></i></a>
-            //<span>Twitter</span> -->
         </div>
-        <div class="footer-text">Copyright © 2022 ChainFunding 保留一切權利.</div>
+        <div>
+            <span>Copyright © 2022 ChainFunding 保留一切權利.</span>
+        </div>
         </span>
-    </div>
-    </div>
-</footer>
+    </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="../html/js/main.js"></script>
 </body>
