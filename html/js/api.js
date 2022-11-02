@@ -11,8 +11,8 @@ function Registration() {
     var data = {
         "username": username,
         "email": email,
-        "password1": password1,
-        "password2": password2
+        "password": password1,
+        "re_password": password2
     }
     console.log(data);
 
@@ -27,14 +27,14 @@ function Registration() {
     }
     
     var settings = {
-        "url": base_url + "/rest-auth/registration/",
+        "url": base_url + "/auth/users/",
         "method": "POST",
         "timeout": 0,
         "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
         },
     
-        "data": data
+        "data": JSON.stringify(data)
     };
 
     $.ajax(settings).done(function (response) {
@@ -45,29 +45,22 @@ function Registration() {
 function Login() {
     var account = $('#account').val();
     var password = $('#password').val();
-    if (reg2.test(account)){
-        var data = {
-            "email": account,
-            "password": password,
-        }
+
+    var data = {
+        "username": account,
+        "password": password,
     }
-    else{
-        var data = {
-            "username": account,
-            "password": password,
-        }
-    }
+
     $.ajax({
-        url: base_url + "/rest-auth/login/",
+        url: base_url + "/auth/jwt/create/",
         type: 'POST',
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json",
         data: JSON.stringify(data),
-        crossDomain: true,
-        xhrFields: {
-            withCredentials: true
-        },
         success: function (response) {
             $('#send_data').html(response);
+            document.cookie = "refresh="+response.refresh;
+            document.cookie = "access="+response.access;
+
         },
         error: function (xhr) {
             alert('Ajax request 發生錯誤');
