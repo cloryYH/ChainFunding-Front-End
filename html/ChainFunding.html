@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/ChainFunding.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>ChainFunding</title>
+    <title>ChainFunding | 首頁</title>
 </head>
+
+<style>
+    input[type="text"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+</style>
+
 <body>
     <header style="text-align:center">
         <span><img src="../html/images/logo.jpeg" align="center"></span>
         <span class="header_search">
             <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
             <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
-            <button class="header_search_button"><img src="../html/images/search.png" alt=""></button>
+            <button class="header_search_button"><button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button></button>
         </span>
     <span class="dropdown">
         <button class="dropbtn"><i class="fa-solid fa-globe" style="font-size: 36px;color:navy;"></i></button>
@@ -25,20 +31,20 @@
     </span>
     <a href="./login.html">登入/註冊</a>
     </header>
-    <table id="SearchConditions" style="text-align: center" border="1">
+    <table id="SearchConditions" style="text-align: center">
         <tr>
             <td>已發起集資</td>
             <td class="cb">
-                是<input type="checkbox">
-                否<input type="checkbox">
+                <input type="checkbox">是
+                <input type="checkbox">否
             </td>
         </tr>
         <tr>
             <td>幣種</td>
             <td class="cb">
-                Coin1<input type="checkbox">
-                Coin2<input type="checkbox">
-                Coin3<input type="checkbox">
+                <input type="checkbox">Coin1
+                <input type="checkbox">Coin2
+                <input type="checkbox">Coin3
             </td>
         </tr>
         <tr>
@@ -54,11 +60,11 @@
         <tr>
             <td>集資發起人評價</td>
             <td class="cb">
-                1star<input type="checkbox">
-                2star<input type="checkbox">
-                3star<input type="checkbox">
-                4star<input type="checkbox">
-                5star<input type="checkbox">
+                <input type="checkbox"><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </td>
         </tr>
     </table>
@@ -73,22 +79,22 @@
         <td>
             <div class="product" id="pro1">
 			  <div class="product_image"><a href=""><img src="../html/images/b1.jpg" alt=""></a></div>
-			  <div class="product_name"><a href="">Name</a></div>
-			  <div class="product_category">Category</div>
+			  <div class="product_name"><a href="">1</a></div>
+			  <div class="product_category">虛擬貨幣</div>
             </div>
         </td>
         <td>
-            <div class="product" id="pro1">
+            <div class="product" id="pro2">
 			  <div class="product_image"><a href=""><img src="../html/images/b2.png" alt=""></a></div>
-			  <div class="product_name"><a href="">Name</a></div>
-			  <div class="product_category">Category</div>
+			  <div class="product_name"><a href="">2</a></div>
+			  <div class="product_category">虛擬貨幣</div>
             </div>
         </td>
         <td>
-            <div class="product" id="pro1">
-			  <div class="product_image"><a href=""><img src="../html/images/b2.png" alt=""></a></div>
-			  <div class="product_name"><a href="">Name</a></div>
-			  <div class="product_category">Category</div>
+            <div class="product" id="pro3">
+			  <div class="product_image"><a href=""><img src="../html/images/b3.png" alt=""></a></div>
+			  <div class="product_name"><a href="">3</a></div>
+			  <div class="product_category">NFT</div>
             </div>
         </td>
     </tr>

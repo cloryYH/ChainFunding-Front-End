@@ -1,3 +1,10 @@
+header{
+    background-color:white;
+}
+html{
+    background-color:azure;
+}
+
 #SearchConditions{
     font-size:30px;
     font-family:Microsoft JhengHei;
@@ -121,19 +128,19 @@ a{
 	padding-left:20%;
 }
 .homepage-firstpic{
-	background-image:url('../images/indexpic1.jpg');
+	background-image:url('../images/background.jpeg');
 	background-size:100% 100%;
 	height:400px;
 	width:100%;
 }
 .slogan{
 	text-align:right;
-	padding:200px 0px 0px 0px;
+	padding:150px 50px 0px 0px;
 	color: white;
 }
 .start-search{
 	position:absolute;
-	right:1%;
+	right:3%;
 	font-size:24px;
 }
 .product_box{

@@ -190,3 +190,41 @@ a{
 .footer-text{
     text-align: center;
 }
+
+#signup{
+    font-size:20px;
+    font-family:Microsoft JhengHei;
+    padding: 10px;
+    text-align: center;
+    color:#4a4a4a;
+}
+#signup2{
+    font-size:20px;
+    font-family:Microsoft JhengHei;
+    text-align: center;
+    color:#4a4a4a;
+}
+.login{
+    font-size:25px;
+    font-family:Microsoft JhengHei;
+    margin-left: 40%;
+    width: 20%;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: .50;
+}
+.signup{
+    font-size:25px;
+    font-family:Microsoft JhengHei;
+    margin-left: 40%;
+    width: 20%;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: .50;
+}

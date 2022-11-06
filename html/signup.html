@@ -5,37 +5,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../html/css/signup.css"> -->
-    <title>ChainFunding_signup</title>
-    
+    <link rel="stylesheet" type="text/css" href="../html/css/category.css">
+    <title>ChainFunding | 註冊</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
     <script src="js/api.js"></script>
 </head>
+<style>
+    input[type="submit"]{padding:10px 30px; background:#ccc; border:0 none;
+border-radius: 20px; }
+    
+    input[type="text"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+
+    input[type="password"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+</style>
+
 <body>
-    <h1>ChainFunding註冊</h1>
-    <h1 id="send_data">abcd</h1>
+    <header style="text-align:center">
+        <span><img src="../html/images/logo.jpeg" align="center"></span>
+        <span class="header_search">
+            <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
+            <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
+            <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
+        </span>
+    <span class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="font-size: 36px;color:navy;"></i></button>
+        <div class="dropdown-content">
+          <a href="#">繁體中文</a>
+          <a href="#">English</a>
+        </div>
+    </span>
 
-    <table class="signup" style="text-align: center">
-        <tr>
-            <td>使用者名稱</td>
-            <td><input id="username" type="text"></td>
-        </tr>
-        <tr>
-            <td>電子信箱</td>
-            <td><input id="email" type="text"></td>
-        </tr>
-        <tr >
-            <td>密碼</td>
-            <td><input id="password1" type="password"></td>
-        </tr>
-        <tr>
-            <td>確認密碼</td>
-            <td><input id="password2" type="password"></td>
-        </tr>
-    </table>
-    <input type="checkbox">我已確認以上資訊皆為正確
-    <input id="SubmitBotton" type="submit" onclick="Registration()">
-<!-- <script>$("#submitbotton").click(registration())</script> -->
+    <a href="./login.html">登入/註冊</a>
+    </header>
 
-<!-- <script>Registration();</script> -->
+    <table id="SearchConditions" style="text-align: center">
+        <tr>
+            <td>已發起集資</td>
+            <td class="cb">
+                <input type="checkbox">是
+                <input type="checkbox">否
+            </td>
+        </tr>
+        <tr>
+            <td>幣種</td>
+            <td class="cb">
+                <input type="checkbox">Coin1
+                <input type="checkbox">Coin2
+                <input type="checkbox">Coin3
+            </td>
+        </tr>
+        <tr>
+            <td>價格</td>
+            <td>
+                <select>
+                    <option value="">100$~1000$</option>
+                    <option value="">1000$~10000$</option>
+                    <option value="">10000$~100000$</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>集資發起人評價</td>
+            <td class="cb">
+                <input type="checkbox"><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </td>
+        </tr>
+        <div class="logintext" style="font-size: 40px;" align="center"> 註冊</div>
+        <table class="signup" style="text-align: center">
+            <tr>
+                <td>帳號</td>
+                <td><input id="username" type="text" placeholder="請輸入用戶名"></td>
+            </tr>
+            <tr>
+                <td>電子信箱</td>
+                <td><input id="email" type="text" placeholder="請輸入電子信箱"></td>
+            </tr>
+            <tr >
+                <td>密碼</td>
+                <td><input id="password1" type="password" placeholder="請輸入8-16位之英數密碼"></td>
+            </tr>
+            <tr>
+                <td>確認密碼</td>
+                <td><input id="password2" type="password" placeholder="請再輸入一次密碼"></td>
+            </tr>
+            <tr>
+                <tr id="SubmitBotton" onclick="Registration()"> 
+                    <td> </td>
+                    <td><input type="submit" value="註冊"></td>
+                </tr>
+            </tr>
+        </table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../html/js/main.js"></script>
 </body>
 </html>
