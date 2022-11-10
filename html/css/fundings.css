@@ -228,3 +228,33 @@ a{
     text-align: center;
     opacity: .50;
 }
+.funding-information{
+    width: 70%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+}
+.funding-information img{
+    width: 30%;
+    float:left;
+    padding:10%;
+}
+.words-message{
+    width: 50%;
+    float:right;
+}
+.create-project{
+    width: 70%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+}
+.create-project img{
+    width: 20%;
+    float:left;
+    padding:5%;
+}
+.project-settings{
+    width: 70%;
+    float:right;
+}
