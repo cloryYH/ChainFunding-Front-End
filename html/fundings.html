@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
+    <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
+    <title>集資項目名稱</title>
+</head>
+
+<style>
+    input[type="text"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+</style>
+
+<body>
+    <header style="text-align:center">
+        <span><img src="../html/images/logo.jpeg" align="center"></span>
+        <span class="header_search">
+            <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
+            <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
+            <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
+        </span>
+    <span class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="font-size: 36px;color:navy;"></i></button>
+        <div class="dropdown-content">
+          <a href="#">繁體中文</a>
+          <a href="#">English</a>
+        </div>
+    </span>
+
+    <a href="./login.html">登入/註冊</a>
+    </header>
+
+    <table id="SearchConditions" style="text-align: center">
+        <tr>
+            <td>已發起集資</td>
+            <td class="cb">
+                <input type="checkbox">是
+                <input type="checkbox">否
+            </td>
+        </tr>
+        <tr>
+            <td>幣種</td>
+            <td class="cb">
+                <input type="checkbox">Coin1
+                <input type="checkbox">Coin2
+                <input type="checkbox">Coin3
+            </td>
+        </tr>
+        <tr>
+            <td>價格</td>
+            <td>
+                <select>
+                    <option value="">100$~1000$</option>
+                    <option value="">1000$~10000$</option>
+                    <option value="">10000$~100000$</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>集資發起人評價</td>
+            <td class="cb">
+                <input type="checkbox"><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </td>
+        </tr>
+    </table>
+    
+	<!-- detailed information -->
+    <div class="funding-information">
+        <img src="../html/images/b1.jpg">
+        <div class="words-message">
+          <h2 class="funding-title">商品名稱</h2>
+          <hr />
+          <div class="sponser">
+            <span class="info-label-1">發起人</span>
+            <span class="info-message-1"><a href="#">發起人名稱</a></span>
+          </div>
+          <div class="tags">
+            <span class="info-label-1">Tags</span>
+            <span class="info-message-1">tag1, tag2, tag3</span>
+          </div>
+          <hr />
+          <div class="total-price">
+            <span class="info-label-1">項目總價</span>
+            <span class="info-message-1">price</span>
+          </div>
+          <div class="progress">
+            <span class="info-label-1">集資進度</span>
+            <span class="info-message-1">percentage</span>
+            <span class="funding-progress-bar">進度條</span>
+          </div>
+          <div class="profit-goal">
+            <span class="info-label-1">盈利目標</span>
+            <span class="info-message-1">percentage</span>
+          </div>
+          <div class="tactics">
+            <span class="info-label-1">投資策略</span>
+            <span class="info-message-1">strategy1, s2, s3</span>
+          </div>
+
+          <div class="transfer-pm">
+            <span class="info-label-1">允許轉讓份額</span>
+            <span class="info-message-1">percentage</span>
+          </div>
+          <div class="left-time">
+            <span class="info-label-1">集資剩餘時間</span>
+            <span class="info-message-1">xxD xxH xxM</span>
+          </div>
+          <div class="min-part">
+            <span class="info-label-1">最少參與比例</span>
+            <span class="info-message-1">percentage xxETH xx USD</span>
+          </div>
+
+          <div class="funding buttons">
+            <button class="bt-go-wallet">前往錢包界面</button>
+            <button class="bt-add-track">加入個人追蹤</button>
+          </div>
+        </div>
+    </div>
+    <footer>   
+        <span class="footer-menu">
+        <div>
+            <span class="footer-text">客服中心</span>
+            <span>|</span>
+            <span>關於我們</span>
+            <span>|</span>
+            <span>使用教學</span>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/chainfunding_official/"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
+            <span>Instagram</span>
+            <span>|</span>
+            <a href="https://www.facebook.com/ChainFunding-103982252340175/"><i class="fab fa-facebook" style="color: blue;"></i></a>
+            <span>Facebook</span>
+        </div>
+        <div>
+            <span>Copyright © 2022 ChainFunding 保留一切權利.</span>
+        </div>
+        </span>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../html/js/main.js"></script>
+</body>
+</html>
