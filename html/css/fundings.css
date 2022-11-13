@@ -13,12 +13,18 @@ html{
 	left:30%;
     z-index:2;
 }
+button{
+    font-size:20px;
+    padding:10px 30px;
+    border:2px black solid;
+    border-radius: 20px; 
+}
 div{
     font-size: 30px;
     font-family:Microsoft JhengHei;
 }
 span{
-    font-size: 20px;
+    font-size: 22px;
     font-family:Microsoft JhengHei;
 }
 a{

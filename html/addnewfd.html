@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>集資項目名稱</title>
+    <title>ChainFunding | 新增集資項目</title>
 </head>
 
 <style>
@@ -16,24 +16,24 @@ border-radius: 20px; }
 
 <body>
     <header style="text-align:center">
-        <span><img src="../html/images/logo.jpeg" align="center"></span>
+      <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpeg" align="center"></a></span>
         <span class="header_search">
-            <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i>
+            <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
             <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
             <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
         </span>
     <span class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-globe" style="font-size: 36px;color:navy;"></i></button>
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i> 語言</button>
         <div class="dropdown-content">
           <a href="#">繁體中文</a>
           <a href="#">English</a>
         </div>
     </span>
-
-    <a href="./login.html">登入/註冊</a>
+    <span style="color:white">aaa</span>
+    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a> 登入</span>
     </header>
 
-    <table id="SearchConditions" style="text-align: center">
+    <!-- <table id="SearchConditions" style="text-align: center">
         <tr>
             <td>已發起集資</td>
             <td class="cb">
@@ -69,13 +69,13 @@ border-radius: 20px; }
                 <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </td>
         </tr>
-    </table>
+    </table> -->
     
 	<!-- create new funding project -->
     <div class="create-project">
         <img src="../html/images/b1.jpg">
         <div class="project-settings">
-          <h2 class="funding-title">在此新增您的集資</h2>
+          <h2 class="funding-title">在此新增您的集資項目</h2>
           <hr />
           <div class="project-name">
             <span class="info-label-1">項目名</span>
@@ -95,16 +95,18 @@ border-radius: 20px; }
           </div>
           <hr />
 
-          <h3>為您的計劃添加Tag:</h3>
+          <h3>為您的計劃新增Tag:</h3>
           <div class="add-tags">
-            <input placeholder="鍵入您的tag, 用逗號分隔, 最多10個">
+            <input type="text" class="search_input" style="font-size: 15px" placeholder="輸入您的Tag, 並用逗號分隔, 最多10個">
           </div>
           <hr />
           
           <div class="set-profit-goal">
             <span class="info-label-1">盈利目標</span>
-            <input placeholder="輸入計劃的期望盈利，單位：百分比">
           </div>
+          <div class="set-profit-goal"></div>
+          <input type="text" class="search_input" style="font-size: 15px" placeholder="輸入計劃的期望盈利，單位：百分比(%)">
+          <div class="set-profit-goal"></div>
           <div class="set-tactics">
             <span class="info-label-1">投資策略</span>
             <span class="info-message-1">
@@ -134,26 +136,27 @@ border-radius: 20px; }
           <div class="set-and-pay">
             <span class="info-label-1">己方出資比例</span>
             <span class="funding-progress-bar">進度條</span>
-            
-            <button class="bt-go-wallet">前往錢包界面</button>
+          </div>
+          <span style="color:white">aaa</span>
+          <div class="button" style="color: white;">
+          <button class="bt-go-wallet">前往錢包介面</button>
           </div>
         </div>
+    </div>
+    <div style="color: white;">
+      aaa
     </div>
     <footer>   
         <span class="footer-menu">
         <div>
-            <span class="footer-text">客服中心</span>
-            <span>|</span>
-            <span>關於我們</span>
-            <span>|</span>
-            <span>使用教學</span>
-        </div>
-        <div>
-            <a href="https://www.instagram.com/chainfunding_official/"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
-            <span>Instagram</span>
-            <span>|</span>
-            <a href="https://www.facebook.com/ChainFunding-103982252340175/"><i class="fab fa-facebook" style="color: blue;"></i></a>
-            <span>Facebook</span>
+          <a href="https://www.instagram.com/chainfunding_official/"><i class="fa-sharp fa-solid fa-user-secret" style="color:gray;"></i></a>
+          <span>關於我們</span>
+          <span>|</span>
+          <a href="https://www.instagram.com/chainfunding_official/"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
+          <span>Instagram</span>
+          <span>|</span>
+          <a href="https://www.facebook.com/ChainFunding-103982252340175/"><i class="fab fa-facebook" style="color: blue;"></i></a>
+          <span>Facebook</span>
         </div>
         <div>
             <span>Copyright © 2022 ChainFunding 保留一切權利.</span>
