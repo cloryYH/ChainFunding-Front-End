@@ -264,3 +264,12 @@ a{
     width: 70%;
     float:right;
 }
+.content_text
+{
+  border-top:12px solid white;
+  border-bottom:12px solid white;
+  padding:8px;
+  background-color: #4a4a4a;
+  text-align:center;
+  color: white;
+}

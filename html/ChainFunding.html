@@ -10,7 +10,7 @@
 </head>
 
 <style>
-    input[type="text"]{padding:10px 30px; border:2px black solid;
+    input[type="text"]{padding:10px 30px; border:2px rgba(12, 0, 0, 0.123) solid;
 border-radius: 20px; }
 </style>
 
@@ -29,8 +29,8 @@ border-radius: 20px; }
           <a href="#">English</a>
         </div>
     </span>
-    <span style="color:white">aaa</span>
-    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a> 登入</span>
+    <span style="color:white; user-select: none;" >aaa</span>
+    <span id="main-user-bt" class="dropdown"></span> 
     </header>
     <!-- <table id="SearchConditions" style="text-align: center">
         <tr>
@@ -118,5 +118,6 @@ border-radius: 20px; }
     </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="../html/js/main.js"></script>
+<script src="js/api.js"></script>
 </body>
 </html>
