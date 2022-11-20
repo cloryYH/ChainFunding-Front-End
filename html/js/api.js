@@ -105,6 +105,43 @@ function usermenucheck(){
     var weth_balance=1;
     var usdt_balance=1;
     var usdc_balance=1;
+    var wethApi = {
+        "url":base_url+ "/wallet/weth",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+      };
+    $.ajax(wethApi).done(function (response) {
+        weth_balance=response.amount;
+        console.log(weth_balance);
+      });
+    var usdtApi = {
+        "url":base_url+ "/wallet/usdt",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+      };
+ $.ajax(usdtApi).done(function (response) {
+        usdt_balance=response.amount;
+        console.log(usdt_balance);
+      }); 
+    var usdcApi = {
+        "url":base_url+ "/wallet/usdc",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+      }; 
+      $.ajax(usdcApi).done(function (response) {
+        usdc_balance=response.amount;
+        console.log(usdc_balance);
+      });
+
     document.getElementById("weth-balance").innerText=weth_balance;
     document.getElementById("usdt-balance").innerText=usdt_balance;
     document.getElementById("usdc-balance").innerText=usdc_balance;
