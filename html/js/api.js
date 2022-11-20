@@ -97,52 +97,31 @@ function Logout(){
     location.reload();
 }
 
+function GetWalletBalance(Wtype){
+    var walletApi={
+        "url":base_url+"/wallet/"+Wtype,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+    };
+    var balance;
+    $.ajax(walletApi).done(function (response) {
+        balance=parseFloat(response.amount).toFixed(3);
+        var reg02 = /\B(?=(\d{3})+(?!\d))/g;
+        var walletid=Wtype+'-balance';
+        document.getElementById(walletid).innerText=balance.toString().replace(reg02, ',');
+    });
+    
+}
+
 function usermenucheck(){
     var ca=document.cookie.split(';'); 
     if(ca.length<=1){   //如果找不到access 即未登入 跳回到登入界面
         window.location.href = "./login.html";
     }
-    var weth_balance=1;
-    var usdt_balance=1;
-    var usdc_balance=1;
-    var wethApi = {
-        "url":base_url+ "/wallet/weth",
-        "method": "GET",
-        "timeout": 0,
-        "headers": {
-          "Authorization": "Bearer "+$.cookie('access')
-        },
-      };
-    $.ajax(wethApi).done(function (response) {
-        weth_balance=response.amount;
-        console.log(weth_balance);
-      });
-    var usdtApi = {
-        "url":base_url+ "/wallet/usdt",
-        "method": "GET",
-        "timeout": 0,
-        "headers": {
-          "Authorization": "Bearer "+$.cookie('access')
-        },
-      };
- $.ajax(usdtApi).done(function (response) {
-        usdt_balance=response.amount;
-        console.log(usdt_balance);
-      }); 
-    var usdcApi = {
-        "url":base_url+ "/wallet/usdc",
-        "method": "GET",
-        "timeout": 0,
-        "headers": {
-          "Authorization": "Bearer "+$.cookie('access')
-        },
-      }; 
-      $.ajax(usdcApi).done(function (response) {
-        usdc_balance=response.amount;
-        console.log(usdc_balance);
-      });
-
-    document.getElementById("weth-balance").innerText=weth_balance;
-    document.getElementById("usdt-balance").innerText=usdt_balance;
-    document.getElementById("usdc-balance").innerText=usdc_balance;
+    GetWalletBalance('weth');
+    GetWalletBalance('usdt');
+    GetWalletBalance('usdc');
 }
