@@ -35,7 +35,7 @@ function Registration() {
         data: JSON.stringify(data),
 
         success: function (response) {
-            alert('成功註冊，接下來將為您轉回註冊介面。');
+            alert('成功註冊，接下來將為您轉回註冊前介面。');
             if(document.referrer=="" || document.referrer==document.href){
                 window.location.href = "./ChainFunding.html";
             }
