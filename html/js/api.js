@@ -92,7 +92,7 @@ function Login() {
 }
 
 function Logout(){
-    document.cookie='refresh; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+    document.cookie='refresh=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
     document.cookie='access=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
     location.reload();
 }
