@@ -1,10 +1,16 @@
 header{
     background-color:white;
 }
-html{
-    background-color:azure;
+body{
+	margin:0px;
+	padding:0px;
 }
-
+html{
+    background-color:lightblue
+}
+footer{
+	background-color:rgb(200, 220, 240);
+}
 #SearchConditions{
     font-size:30px;
     font-family:Microsoft JhengHei;
@@ -132,7 +138,10 @@ a{
 	background-image:url('../images/background.jpeg');
 	background-size:100% 100%;
 	height:400px;
-	width:100%;
+	width: 65%;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 .slogan{
 	text-align:right;

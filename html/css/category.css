@@ -1,8 +1,15 @@
 header{
     background-color:white;
 }
+body{
+	margin:0px;
+	padding:0px;
+}
 html{
-    background-color:azure;
+    background-color:lightblue
+}
+footer{
+	background-color:rgb(200, 220, 240);
 }
 #SearchConditions{
     font-size:30px;
@@ -205,26 +212,26 @@ a{
     color:#4a4a4a;
 }
 .login{
-    font-size:25px;
+    font-size:20px;
     font-family:Microsoft JhengHei;
-    margin-left: 40%;
-    width: 20%;
+    margin-left: 35%;
+    width: 30%;
     border-radius: 10px;
     background: #000;
     color: #fff;
     padding: 10px;
     text-align: center;
-    opacity: .50;
+    opacity: .70;
 }
 .signup{
-    font-size:25px;
+    font-size:20px;
     font-family:Microsoft JhengHei;
-    margin-left: 40%;
-    width: 20%;
+    margin-left: 30%;
+    width: 40%;
     border-radius: 10px;
     background: #000;
     color: #fff;
     padding: 10px;
     text-align: center;
-    opacity: .50;
+    opacity: .70;
 }

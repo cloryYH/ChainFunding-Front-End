@@ -15,10 +15,10 @@
     input[type="submit"]{padding:10px 30px; background:#ccc; border:0 none;
 border-radius: 20px; }
     
-    input[type="text"]{padding:10px 30px; border:2px black solid;
+    input[type="text"]{padding:10px 60px; border:2px black solid;
 border-radius: 20px; }
 
-    input[type="password"]{padding:10px 30px; border:2px black solid;
+    input[type="password"]{padding:10px 60px; border:2px black solid;
 border-radius: 20px; }
 </style>
 
@@ -31,14 +31,14 @@ border-radius: 20px; }
             <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
         </span>
     <span class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i> 語言</button>
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
         <div class="dropdown-content">
           <a href="#">繁體中文</a>
           <a href="#">English</a>
         </div>
     </span>
-    <span style="color:white">aaa</span>
-    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a> 登入</span>
+    <span style="color:white; user-select: none;">aaa</span>
+    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a></span>
     </header>
 
     <!-- <table id="SearchConditions" style="text-align: center">
@@ -77,23 +77,25 @@ border-radius: 20px; }
                 <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </td>
         </tr> -->
+        <span style="color:lightblue; user-select: none;">aaa</span>
         <div class="logintext" style="font-size: 40px;" align="center"> 註冊</div>
+        <span style="color:lightblue; user-select: none;">aaa</span>
         <table class="signup" style="text-align: center">
             <tr>
                 <td>帳號</td>
-                <td><input id="username" type="text" placeholder="請輸入用戶名"></td>
+                <td><input id="username" type="text" placeholder="請輸入用戶名" style="margin-bottom:10px"></td>
             </tr>
             <tr>
                 <td>電子信箱</td>
-                <td><input id="email" type="text" placeholder="請輸入電子信箱"></td>
+                <td><input id="email" type="text" placeholder="請輸入電子信箱" style="margin-bottom:10px"></td>
             </tr>
             <tr >
                 <td>密碼</td>
-                <td><input id="password1" type="password" placeholder="請輸入8-16位之英數密碼"></td>
+                <td><input id="password1" type="password" placeholder="請輸入8-16位英數密碼" style="margin-bottom:10px"></td>
             </tr>
             <tr>
                 <td>確認密碼</td>
-                <td><input id="password2" type="password" placeholder="請再輸入一次密碼"></td>
+                <td><input id="password2" type="password" placeholder="請再輸入一次密碼" style="margin-bottom:10px"></td>
             </tr>
             <tr>
                 <tr id="SubmitBotton" onclick="Registration()"> 
@@ -104,7 +106,7 @@ border-radius: 20px; }
         </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 <script src="js/api.js"></script>
 </body>
 </html>

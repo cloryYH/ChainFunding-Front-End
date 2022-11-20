@@ -1,8 +1,15 @@
 header{
     background-color:white;
 }
+body{
+	margin:0px;
+	padding:0px;
+}
 html{
-    background-color:azure;
+    background-color:lightblue
+}
+footer{
+	background-color:rgb(200, 220, 240);
 }
 #SearchConditions{
     font-size:30px;
