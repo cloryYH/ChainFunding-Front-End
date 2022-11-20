@@ -14,7 +14,7 @@
 border-radius: 20px; }
 </style>
 
-<body>
+<body onload="usermenucheck()">
     <header style="text-align:center">
         <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpeg" align="center"></a></span>
         <span class="header_search">
@@ -51,6 +51,7 @@ border-radius: 20px; }
           </div>
           <hr />
           <h4>錢包資訊</h4>
+
           <div class="user-balance-1">
             <span class="info-label-1">WETH</span>
             <span class="info-message-1" id="weth-balance">0.00</span>

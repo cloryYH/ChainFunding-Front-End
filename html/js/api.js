@@ -96,3 +96,16 @@ function Logout(){
     document.cookie='access=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
     location.reload();
 }
+
+function usermenucheck(){
+    var ca=document.cookie.split(';'); 
+    if(ca.length<=1){   //如果找不到access 即未登入 跳回到登入界面
+        window.location.href = "./login.html";
+    }
+    var weth_balance=1;
+    var usdt_balance=1;
+    var usdc_balance=1;
+    document.getElementById("weth-balance").innerText=weth_balance;
+    document.getElementById("usdt-balance").innerText=usdt_balance;
+    document.getElementById("usdc-balance").innerText=usdc_balance;
+}
