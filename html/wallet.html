@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>ChainFunding | 個人中心</title>
+    <title>ChainFunding | 我的錢包</title>
 </head>
 
 <style>
@@ -32,32 +32,36 @@ border-radius: 20px; }
     <span style="color:white; user-select: none;" >aaa</span>
     <span id="main-user-bt" class="dropdown"></span> 
     </header>
-    <div class="content_text">個人中心</div>
+    <div class="content_text">我的錢包</div>
     <div class="funding-information">
         <img src="../html/images/logo.jpeg">
         <div class="words-message">
-          <h4>個人資訊</h4>
+          <h4>錢包資訊</h4>
           <hr />
-          <div class="user-username">
-            <span class="info-label-1">用戶名</span>
-            <span class="info-message-1">user123</span>
+          <div class="user-wallet-bd">
+            <span class="info-label-1">錢包狀態</span>
+            <span class="info-message-1">已綁定</span>
           </div>
-          <div class="user-email">
-            <span class="info-label-1">Email地址</span>
-            <span class="info-message-1">example@gmail.com</span>
-          </div>
-          <div style="color: lightblue; user-select: none;">aaa</div>
-          <div class="funding buttons">
-            <button class="bt-add-wallet">更改密碼</button>
-            <!-- <button class="bt-add-wallet">綁定錢包</button> 如果有綁定錢包了 按鈕會變成更改錢包 明天再做 -->
+          <div class="user-wallet-address">
+            <span class="info-label-1">已綁定的錢包地址</span>
+            <span class="info-message-1">0x00000</span>
           </div>
           <div style="color: lightblue; user-select: none;">aaa</div>
-          <div class="funding buttons">
-            <button class="bt-add-wallet">申請出金</button>
+          <div class="user-balance-1">
+            <span class="info-label-1">WETH</span>
+            <span class="info-message-1" id="weth-balance">0.00</span>
           </div>
-          <div style="color: lightblue; user-select: none;">aaa</div>
+          <div class="user-balance-2">
+            <span class="info-label-1">USDT</span>
+            <span class="info-message-1" id="usdt-balance">0.00</span>
+          </div>          
+          <div class="user-balance-3">
+            <span class="info-label-1">USDC</span>
+            <span class="info-message-1" id="usdc-balance">0.00</span>
+          </div>
+          <span style="color:lightblue; user-select: none;">aaa</span>
           <div class="funding buttons">
-            <button class="bt-add-wallet">申請入金</button>
+            <button class="bt-add-wallet">更改錢包</button>
           </div>
           <div style="color: lightblue; user-select: none;">aaa</div>
         </div>

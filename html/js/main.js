@@ -19,10 +19,10 @@ $(document).ready(function () {
             $('#main-user-bt').append("<a href=\"./usermenu.html\">\
                 <i class=\"fa-solid fa-user\" style=\"color:skyblue;\"></i></a>\
                 <div class=\"dropdown-content\">\
-                  <a href = \"./usermenu.html\">用戶中心</a>\
-                  <a href = \"./usermenu.html\">追蹤清單</a>\
-                  <a href = \"./usermenu.html\">我的錢包</a>\
-                  <a href = \"./usermenu.html\">轉帳記錄</a>\
+                  <a href = \"./usermenu.html\">個人中心</a>\
+                  <a href = \"./tracklist.html\">追蹤清單</a>\
+                  <a href = \"./wallet.html\">我的錢包</a>\
+                  <a href = \"./transferRecord.html\">轉帳記錄</a>\
                   <a href = \"javascript:void(0);\" onclick =\"Logout()\">登出</a>\
                 </div>");
             $('#notification-bt').append("<a href=\"./notification.html\"><i class=\"fa-solid fa-bell\" style=\"color:orange;\"></i></a>");
