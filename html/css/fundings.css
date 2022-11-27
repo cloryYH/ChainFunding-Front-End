@@ -14,13 +14,19 @@ footer{
 #SearchConditions{
     font-size:30px;
     font-family:Microsoft JhengHei;
-    display:none;
     background-color: lightgray;
+    display:none;
     position: fixed;
 	left:30%;
     z-index:2;
 }
-button{
+.function-button{
+    font-size:20px;
+    padding:10px 30px;
+    border:2px black solid;
+    border-radius: 20px; 
+}
+.bt-add-wallet{
     font-size:20px;
     padding:10px 30px;
     border:2px black solid;
@@ -122,6 +128,7 @@ a{
 }
 .dropdown-content {
     display: none;
+    right:-120%;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 128px;

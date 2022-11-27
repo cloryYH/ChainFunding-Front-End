@@ -18,23 +18,25 @@ border-radius: 20px; }
 border-radius: 20px; }
 </style>
 
-<body>
+<body onload="defaultTime()">
     <header style="text-align:center">
       <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpeg" align="center"></a></span>
-        <span class="header_search">
-            <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
-            <input type="text" class="search_input" style="font-size: 24px" placeholder="集資項目搜尋">
-            <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
-        </span>
-    <span class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
-        <div class="dropdown-content">
-          <a href="#">繁體中文</a>
-          <a href="#">English</a>
+      <span class="header_search">
+        <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
+        <input type="text" class="search_input" style="font-size: 24px; color: black;" placeholder="集資項目搜尋">
+        <button class="header_search_button"><button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button></button>
+      </span>
+      <span class="dropdown">
+       <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
+       <div class="dropdown-content">
+           <a href="#">繁體中文</a>
+           <a href="#">English</a>
         </div>
-    </span>
-    <span style="color:white; user-select: none;">aaa</span>
-    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a></span>
+      </span>
+      <span style="color:white; user-select: none;" >aa</span>
+      <span id="notification-bt" class="dropdown"></span> 
+      <span style="color:white; user-select: none;" >aa</span>
+      <span id="main-user-bt" class="dropdown"></span>
     </header>
     <div class="content_text" style="border-bottom-width: 0px;">在此新增您的集資項目</div>
     <span style="color:lightblue; user-select: none;" >aaa</span>
@@ -130,7 +132,7 @@ border-radius: 20px; }
               <div> </div>
               <span class="info-message-1">
                 <input type="date" id="start-date"
-                value="2022-11-16" min="2022-11-16" max="2023-12-31">
+                value=2022-11-17 min="2022-11-16" max="2023-12-31">
               </span>
             </div>
   
@@ -144,7 +146,7 @@ border-radius: 20px; }
             </div>
           <span style="color:lightblue; user-select: none;">aaa</span>
           <div class="button" style="color: white;">
-            <button class="bt-go-wallet" onclick="newfunding()><i class="fa-solid fa-plus"></i> 新增集資</button>
+            <button class="bt-go-wallet function-button" onclick="newfunding()"><i class="fa-solid fa-plus"></i> 新增集資</button>
           </div>
         </div>
     </div>

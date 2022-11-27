@@ -174,3 +174,15 @@ function newfunding(){//新增集資
         }
     })
 }
+function defaultTime(){//新增集资时预设开始日期于今天 预设结束日期为下个月
+    var today=new Date();
+    var year=today.getFullYear();
+    var month=today.getMonth()+1;
+    var date=today.getDate();
+    var d1=document.getElementById("start-date");
+    var d2=document.getElementById("end-date");
+    d1.value=year+"-"+month+"-"+date;
+    d1.min=d1.value;
+    d2.value=year+"-"+(month+1)+"-"+date;
+    d2.min=year+"-"+month+"-"+(date+1);
+}
