@@ -1,7 +1,7 @@
-var base_url = "https://llw.tw/api/v1"
+const base_url = "https://llw.tw/api/v1"
 //var base_url = "http://llw.tw:8756"
-var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
-var reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+const reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
+const reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
 function Registration() {
     var username = $('#username').val();
@@ -124,4 +124,53 @@ function usermenucheck(){
     GetWalletBalance('weth');
     GetWalletBalance('usdt');
     GetWalletBalance('usdc');
+}
+
+function newfunding(){//新增集資
+    var ca=document.cookie.split(';'); 
+    if(ca.length<=1){   //檢查access
+        window.location.href = "./login.html";
+    }
+    var nftId=0;
+    var address="12345678";
+    var name="abcd";
+    var startTime=$('#start-date').val();
+    var endTime=$('#end-date').val();
+    var token='weth'; //幣種
+    var buyPrice= $('#buy-price').val();
+    var sellPrice= $('#sell-price').val();
+    //var gasPrice= 0.001;手續費自動帶0.1%
+    var stopPrice= $('#stop-price').val();
+    var lowest_share= $('#lowest-share').val();// 最低參與比例
+    
+    var data = {
+        "nftId": nftId,
+        "nftContractAddress": address,
+        "nftName": name,
+        "startTime": startTime+'T00:00:00+08:00',
+        "endTime": endTime+'T23:59:59+08:00',
+        "token": token,
+        "buyPrice": buyPrice,
+        "sellPrice": sellPrice,
+        //"gasPrice": gasPrice,
+        "stopPrice": stopPrice,
+        "lowest_share": lowest_share
+    }
+    //console.log(data);
+    $.ajax({
+        url: base_url + "/fundingprojects",
+        method: "POST",
+        timeout: 0,
+        headers: {
+            "Authorization": "Bearer "+$.cookie('access')
+          },
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function (response) {
+            alert(response.status);
+        },
+        error: function (jqXHR) {
+            alert(jqXHR);
+        }
+    })
 }
