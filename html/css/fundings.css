@@ -288,3 +288,30 @@ a{
   text-align:center;
   color: white;
 }
+
+.tips {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tips .tooltiptext {
+    font-size:16px;
+    visibility: hidden;
+    width:360px;
+    background-color: #7c7c7c;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0 5px;
+    position: absolute;
+    z-index: 1;
+    top:-5px;
+    left:105%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tips:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

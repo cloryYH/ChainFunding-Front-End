@@ -105,33 +105,32 @@ border-radius: 20px; }
             <span class="info-label-1">買入價</span>
           </div>
           <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" style="font-size: 15px" placeholder="請輸入計劃的預定買入價">
+          <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="請輸入計劃的預定買入價">
 
           <div class="set-profit-goal">
             <span class="info-label-1">賣出價</span>
           </div>
           <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" style="font-size: 15px" placeholder="請輸入計劃的預定賣出價">
+          <input type="text" class="search_input" id="sell-price" style="font-size: 15px" placeholder="請輸入計劃的預定賣出價">
 
           <div class="set-profit-goal">
             <span class="info-label-1">停損價</span>
           </div>
           <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" style="font-size: 15px" placeholder="請輸入計劃的預定停損價">
+          <input type="text" class="search_input" id="stop-price" style="font-size: 15px" placeholder="請輸入計劃的預定停損價">
 
           <div class="min-ratio">
             <span class="info-label-1">最低參與比例（單位：%）</span>
           </div>
             <div class="min-ratio"></div>
-            <input type="text" class="search_input" style="font-size: 15px" placeholder="不得低於0.1%且不得高於10%">
+            <input type="text" class="search_input" id="lowest-share" style="font-size: 15px" placeholder="不得低於0.1%且不得高於10%">
             
             <div class="set-iniTime">
               <span class="info-label-1">集資開始日期</span>
               <div> </div>
               <span class="info-message-1">
-                <input type="date" id="start" name="trip-start"
-                value="2022-11-16"
-                min="2022-11-16" max="2022-12-31">
+                <input type="date" id="start-date"
+                value="2022-11-16" min="2022-11-16" max="2023-12-31">
               </span>
             </div>
   
@@ -139,14 +138,13 @@ border-radius: 20px; }
               <span class="info-label-1">集資結束日期</span>
               <div> </div>
               <span class="info-message-1">
-                <input type="date" id="start" name="trip-start"
-                value="2022-11-17"
-                min="2022-11-17" max="2023-12-31">
+                <input type="date" id="end-date"
+                value="2022-11-17" min="2022-11-17" max="2023-12-31">
               </span>
             </div>
           <span style="color:lightblue; user-select: none;">aaa</span>
           <div class="button" style="color: white;">
-            <button class="bt-go-wallet"><i class="fa-solid fa-plus"></i> 新增集資</button>
+            <button class="bt-go-wallet" onclick="newfunding()><i class="fa-solid fa-plus"></i> 新增集資</button>
           </div>
         </div>
     </div>
@@ -169,6 +167,7 @@ border-radius: 20px; }
         </span>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/api.js"></script>
 </body>
