@@ -247,6 +247,14 @@ a{
     display: flex;
     align-items: center;
 }
+.funding-information2{
+    font-size:24px;
+    font-family:Microsoft JhengHei;
+    width: 80%;
+    margin:auto;
+    align-items: center;
+    text-align: center;
+}
 .funding-information img{
     width: 30%;
     float:left;
