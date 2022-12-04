@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>ChainFunding | 轉帳紀錄</title>
+    <title>ChainFunding | 追蹤清單</title>
 </head>
 
 <style>
@@ -35,108 +35,49 @@ border-radius: 20px; }
     <span id="main-user-bt" class="dropdown"></span>
   </header>
   
-    <div class="content_text" style="border-bottom-width: 0px;">轉帳紀錄</div>
+    <div class="content_text" style="border-bottom-width: 0px;">追蹤清單</div>
     <span style="color:lightblue; user-select: none;" >aaa</span>
-    <table class="funding-information2" border="1">
+    <table class="funding-information2">
       <colgroup span="9"></colgroup>
-      <tr style="background-color: lightgray;">
-        <th>轉帳時間</th>
-        <th>轉出</th> <!--內部轉帳為用戶名or外部轉帳為錢包地址--> 
-        <th>轉入</th> <!--內部轉帳為用戶名or外部轉帳為錢包地址--> 
-        <th>幣種</th>
-        <th>數量</th>
-        <th>狀態</th>
-        <th>備註</th>
+      <tr style="background-color: gray;">
+        <th>商品圖</th>
+        <th>商品名</th>
+        <th>發起人</th>
+        <th>集資進度</th>
+        <th>結束日期</th>
+        <th>刪除</th>
       </tr>
       <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
+        <td><img src="../html/images/b2.png" style="width: 80px; margin-top: 25px; margin-bottom: 25px;"></td>
+        <td>Product 1</td>
+        <td>User 1</td>
+        <td>84%</td>
+        <td>2023/01/15</td>
+        <td><button class="delete_track"><i class="fa-solid fa-trash" style="font-size: 24px;color:black;"></i></button></td>
       </tr>
       <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
+        <td><img src="../html/images/b2.png" style="width: 80px; margin-top: 25px; margin-bottom: 25px;"></td>
+        <td>Product 2</td>
+        <td>User 2</td>
+        <td>56%</td>
+        <td>2023/04/18</td>
+        <td><button class="delete_track"><i class="fa-solid fa-trash" style="font-size: 24px;color:black;"></i></button></td>
       </tr>
       <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
+        <td><img src="../html/images/b3.png" style="width: 80px; margin-top: 25px; margin-bottom: 25px;"></td>
+        <td>Product 3</td>
+        <td>User 2</td>
+        <td>26%</td>
+        <td>2023/06/02</td>
+        <td><button class="delete_track"><i class="fa-solid fa-trash" style="font-size: 24px;color:black;"></i></button></td>
       </tr>
       <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
+        <td><img src="../html/images/b3.png" style="width: 80px; margin-top: 25px; margin-bottom: 25px;"></td>
+        <td>Product 4</td>
+        <td>User 3</td>
+        <td>12%</td>
+        <td>2023/12/25</td>
+        <td><button class="delete_track"><i class="fa-solid fa-trash" style="font-size: 24px;color:black;"></i></button></td>
       </tr>
     </table>
     <span style="color:lightblue; user-select: none;" >aaa</span>
