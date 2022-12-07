@@ -1,7 +1,7 @@
 const base_url = "https://llw.tw/api/v1"
-//var base_url = "http://llw.tw:8756"
 const reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
 const reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
 
 function Registration() {
     var username = $('#username').val();
@@ -185,4 +185,91 @@ function defaultTime(){//新增集资时预设开始日期于今天 预设结束
     d1.min=d1.value;
     d2.value=year+"-"+(month+1)+"-"+date;
     d2.min=year+"-"+month+"-"+(date+1);
+}
+
+function getonefunding(pjid){
+    $.ajax({
+        url: base_url + "/fundingprojects/" + pjid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            console.log(JSON.stringify(response));
+        }
+    })
+}
+function getallfunding(){
+    $.ajax({
+        url: base_url + "/fundingprojects",
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            alert(response);
+        }
+    })
+}
+//通过id取得项目具体的链接和名字
+function pj_show(pjid,boxid){
+    var url="fundings.html?id="+pjid;
+    let a=document.getElementById(boxid);
+    a.href=url;
+    $.ajax({
+        url: base_url + "/fundingprojects/" + pjid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            a.innerText=response.nftName;
+        }
+    })
+}
+
+function pj_go(){
+    var url=window.location.href;
+    var pjid=url.split("=")[1];
+    $.ajax({
+        url: base_url + "/fundingprojects/" + pjid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            var token="  "+response.token.toUpperCase();
+            
+            let raiser=document.getElementById('sponser-name');
+            raiser.innerText=response.fundraiser_name;
+
+
+            let text_buy=document.getElementById('buy-price-text');
+            text_buy.innerText=parseFloat(response.buyPrice).toFixed(3)+token;
+            
+            let text_sell=document.getElementById('sell-price-text');
+            text_sell.innerText=parseFloat(response.sellPrice).toFixed(3)+token;
+            
+            let text_stop=document.getElementById('stop-price-text');
+            text_stop.innerText=parseFloat(response.stopPrice).toFixed(3)+token;
+
+
+            let raising=document.getElementById('raising-text');
+            raising.innerText=parseFloat(response.shares_sum).toFixed(3)+token;
+
+            let raising_percentage=document.getElementById('raising-progress-text');
+            raising_percentage.innerText=parseFloat(response.shares_sum_scale)+" %";
+
+            let lowest_share=document.getElementById('min-part-text');
+            lowest_share.innerText=parseFloat(response.lowest_share).toFixed(3)+token;
+
+
+            let end_time=document.getElementById('end-time');
+            end_time.innerText=response.endTime;
+        }
+    })
+}
+function index_show_fundings(){
+    var id1=1;//首页有三个展示项目的框 所以预选3个id 
+    var id2=2;//可以写成乱数产生 也可以按最热门的项目搜寻 
+    var id3=3;//测试方便就直接123了
+    pj_show(id1,'index-pro-1');
+    pj_show(id2,'index-pro-2');
+    pj_show(id3,'index-pro-3');
 }

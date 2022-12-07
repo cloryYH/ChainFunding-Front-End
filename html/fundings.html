@@ -14,7 +14,7 @@
 border-radius: 20px; }
 </style>
 
-<body>
+<body onload="pj_go()">
   <header style="text-align:center">
     <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top:10px; margin-right: 80px;"></a></span>
     <span class="header_search">
@@ -74,53 +74,52 @@ border-radius: 20px; }
     </table> -->
     
 	<!-- detailed information -->
-    <div class="funding-information">
-        <img src="../html/images/b1.jpg">
-        <div class="words-message">
-          <h2 class="funding-title">商品名稱</h2>
-          <hr />
-          <div class="sponser">
-            <span class="info-label-1">發起人</span>
-            <span class="info-message-1"><a href="#">發起人名稱</a></span>
-          </div>
-          <!-- <div class="tags">
-            <span class="info-label-1">Tags</span>
-            <span class="info-message-1">tag1, tag2, tag3</span>
-          </div> -->
-          <!-- <hr /> -->
-          <div class="profit-goal">
-            <span class="info-label-1">買入價</span>
-            <span class="info-message-1">xx ETH</span>
-          </div>
-          <div class="profit-goal">
-            <span class="info-label-1">賣出價</span>
-            <span class="info-message-1">xx ETH</span>
-          </div>
+  <div class="funding-information">
+    <img src="../html/images/b1.jpg">
+    <div class="words-message">
+      <h2 class="funding-title">商品名稱</h2>
+      <hr />
+      <div class="sponser">
+        <span class="info-label-1">發起人</span>
+        <span class="info-message-1"><a href="#" id="sponser-name">發起人名稱</a></span>
+      </div>
+      <!-- <div class="tags">
+        <span class="info-label-1">Tags</span>
+        <span class="info-message-1">tag1, tag2, tag3</span>
+      </div> -->
+      <!-- <hr /> -->
+      <div class="profit-goal">
+        <span class="info-label-1">買入價</span>
+        <span class="info-message-1" id="buy-price-text">xx ETH</span>
+      </div>
+      <div class="profit-goal">
+        <span class="info-label-1">賣出價</span>
+        <span class="info-message-1" id="sell-price-text">xx ETH</span>
+      </div>
+      <div class="profit-goal">
+        <span class="info-label-1">停損價</span>
+        <span class="info-message-1" id="stop-price-text">xx ETH</span>
+      </div>
 
-          <div class="profit-goal">
-            <span class="info-label-1">停損價</span>
-            <span class="info-message-1">xx ETH</span>
-          </div>
+      <div class="progress">
+        <span class="info-label-1">目前集資金額</span>
+        <span class="info-message-1" id="raising-text">xx ETH</span>
+      </div>
 
-          <div class="progress">
-            <span class="info-label-1">目前集資金額</span>
-            <span class="info-message-1">xx ETH</span>
-          </div>
+      <div class="progress">
+        <span class="info-label-1">目前集資進度</span>
+        <span class="info-message-1" id="raising-progress-text">xx %</span>
+      </div>
 
-          <div class="progress">
-            <span class="info-label-1">目前集資進度</span>
-            <span class="info-message-1">xx %</span>
-          </div>
+      <div class="min-part">
+        <span class="info-label-1">最低參與比例</span>
+        <span class="info-message-1" id="min-part-text">xx %</span>
+      </div>
 
-          <div class="min-part">
-            <span class="info-label-1">最低參與比例</span>
-            <span class="info-message-1">xx %</span>
-          </div>
-
-          <div class="left-time">
-            <span class="info-label-1">集資結束日期</span>
-            <span class="info-message-1">2023/12/31</span>
-          </div>
+      <div class="left-time">
+        <span class="info-label-1">集資結束日期</span>
+        <span class="info-message-1" id="end-time">2023/12/31</span>
+      </div>
 
           <div class="handling-fee">
             <span class="info-label-1" style="font-size: 15px; color: gray;">集資若達門檻並成立，本平台將收取0.1%手續費</span>
