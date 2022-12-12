@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>ChainFunding | 檢視及參與集資項目</title>
+    <title>ChainFunding | View and Participate Project</title>
 </head>
 
 <style>
@@ -19,14 +19,14 @@ border-radius: 20px; }
     <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top:10px; margin-right: 80px;"></a></span>
     <span class="header_search">
       <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
-      <input type="text" class="search_input" style="font-size: 24px; color: black;" placeholder="集資項目搜尋">
+      <input type="text" class="search_input" style="font-size: 24px; color: black;" placeholder="Search Project">
       <button class="header_search_button"><button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button></button>
     </span>
     <span class="dropdown">
      <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
      <div class="dropdown-content">
-         <a href="#">繁體中文</a>
          <a href="#">English</a>
+         <a href="#">繁體中文</a>
       </div>
     </span>
     <span style="color:white; user-select: none;" >aa</span>
@@ -34,55 +34,18 @@ border-radius: 20px; }
     <span style="color:white; user-select: none;" >aa</span>
     <span id="main-user-bt" class="dropdown"></span>
   </header>
-  <div class="content_text" style="border-bottom-width:0px;">檢視及參與集資項目</div>
-    <!-- <table id="SearchConditions" style="text-align: center">
-        <tr>
-            <td>已發起集資</td>
-            <td class="cb">
-                <input type="checkbox">是
-                <input type="checkbox">否
-            </td>
-        </tr>
-        <tr>
-            <td>幣種</td>
-            <td class="cb">
-                <input type="checkbox">Coin1
-                <input type="checkbox">Coin2
-                <input type="checkbox">Coin3
-            </td>
-        </tr>
-        <tr>
-            <td>價格</td>
-            <td>
-                <select>
-                    <option value="">100$~1000$</option>
-                    <option value="">1000$~10000$</option>
-                    <option value="">10000$~100000$</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>集資發起人評價</td>
-            <td class="cb">
-                <input type="checkbox"><i class="fa-solid fa-star"></i>
-                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </td>
-        </tr>
-    </table> -->
-    
+  <div class="content_text" style="border-bottom-width:0px;">View and Participate Project</div>
+
 	<!-- detailed information -->
   <div class="funding-information">
     <img src="../html/images/b2.png">
     <div class="words-message">
-      <h2 class="funding-title">商品名稱</h2>
-        <button class="bt-add-track"><i class="fa-sharp fa-solid fa-heart"> 加入追蹤</i></button>
+      <h2 class="funding-title">Product Name</h2>
+        <button class="bt-add-track"><i class="fa-sharp fa-solid fa-heart"></i> Add to track list</button>
       <hr />
       <div class="sponser">
-        <span class="info-label-1">發起人 :</span>
-        <span class="info-message-1"><a href="#" id="sponser-name">發起人名稱</a></span>
+        <span class="info-label-1">Sponsor :</span>
+        <span class="info-message-1"><a href="#" id="sponser-name">name1</a></span>
       </div>
       <!-- <div class="tags">
         <span class="info-label-1">Tags</span>
@@ -90,46 +53,47 @@ border-radius: 20px; }
       </div> -->
       <!-- <hr /> -->
       <div class="profit-goal">
-        <span class="info-label-1">買入價 :</span>
+        <span class="info-label-1">Buying Price :</span>
         <span class="info-message-1" id="buy-price-text">xx ETH</span>
       </div>
       <div class="profit-goal">
-        <span class="info-label-1">賣出價 :</span>
+        <span class="info-label-1">Selling Price :</span>
         <span class="info-message-1" id="sell-price-text">xx ETH</span>
       </div>
       <div class="profit-goal">
-        <span class="info-label-1">停損價 :</span>
+        <span class="info-label-1">Stop Price :</span>
         <span class="info-message-1" id="stop-price-text">xx ETH</span>
       </div>
 
       <div class="progress">
-        <span class="info-label-1">目前集資金額 :</span>
+        <span class="info-label-1">Current Amount :</span>
         <span class="info-message-1" id="raising-text">xx ETH</span>
       </div>
 
       <div class="progress">
-        <span class="info-label-1">目前集資進度 :</span>
+        <span class="info-label-1">Current Progress :</span>
         <span class="info-message-1" id="raising-progress-text">xx %</span>
       </div>
 
       <div class="min-part">
-        <span class="info-label-1">最低參與比例 :</span>
+        <span class="info-label-1">Minimum Participation Ratio :</span>
         <span class="info-message-1" id="min-part-text">xx %</span>
       </div>
 
       <div class="left-time">
-        <span class="info-label-1">集資結束日期 :</span>
+        <span class="info-label-1">End Date :</span>
         <span class="info-message-1" id="end-time">2023/12/31</span>
       </div>
       <div class="set-profit-goal">
-        <span class="info-label-1">參與金額</span>
+        <span class="info-label-1">Participation Amount</span>
       </div>
-      <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="請輸入您欲參與之金額">
+      <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="Please enter the amount you want to participate">
       <span style="color:lightblue; user-select: none;">aaa</span>
       <div class="participate-project">
-        <button class="bt-go-wallet"><i class="fa-solid fa-hand"></i> 確認參與集資</button>
+        <button class="bt-go-wallet"><i class="fa-solid fa-hand"></i> Confirm join project</button>
         <span class="info-label-1" style="font-size: 15px; color: gray;"> 
-          <br>集資若達門檻且成立，本平台將收取0.1%手續費</span>
+          <br>If reaches the threshold and is established,
+          <br>the platform will charge a 0.1% fee.</span>
       </div>
         </div>
     </div>
@@ -138,10 +102,10 @@ border-radius: 20px; }
         <span class="footer-menu">
           <div>
             <a href="./aboutus.html"><i class="fa-sharp fa-solid fa-user-secret" style="color:gray;"></i></a>
-            <span>關於ChainFunding</span>
+            <span>About ChainFunding</span>
             <span>|</span>
             <a href="./userGuide.html"><i class="fa-solid fa-book" style="color:peru;"></i></a>
-            <span>用戶指引</span>
+            <span>User Guide</span>
             <span>|</span>
             <a href="https://www.instagram.com/chainfunding_official/"><i class="fab fa-instagram" style="color:palevioletred;"></i></a>
             <span>Instagram</span>
@@ -150,7 +114,7 @@ border-radius: 20px; }
             <span>Facebook</span>
         </div>
         <div>
-            <span>Copyright © 2022 ChainFunding 保留一切權利.</span>
+            <span>Copyright © 2022 ChainFunding all rights reserved.</span>
         </div>
         </span>
 </footer>

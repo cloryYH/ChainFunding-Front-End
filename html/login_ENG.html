@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="css/login.css"> -->
+    <link rel="stylesheet" type="text/css" href="../html/css/category.css">
+    <title>ChainFunding | Login</title>
+    <script src="js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    input[type="submit"]{padding:10px 30px; background:#ccc; border:0 none;
+border-radius: 20px; }
+    
+    input[type="text"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+
+    input[type="password"]{padding:10px 30px; border:2px black solid;
+border-radius: 20px; }
+</style>
+
+<body>
+    <header style="text-align:center">
+        <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top: 10px; margin-right: 80px;"></a></span>
+        <span class="header_search">
+            <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
+            <input type="text" class="search_input" style="font-size: 24px" placeholder="Project Search">
+            <button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button>
+        </span>
+    <span class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
+        <div class="dropdown-content">
+          <a href="#">English</a>
+          <a href="#">繁體中文</a>
+        </div>
+    </span>
+    <span style="color:white; user-select: none;">aaa</span>
+    <span><a href="./login.html"><i class="fa-solid fa-user-plus" style="color:gray;"></i></a></span>
+    </header>
+
+    <!-- <table id="SearchConditions" style="text-align: center">
+        <tr>
+            <td>已發起集資</td>
+            <td class="cb">
+                <input type="checkbox">是
+                <input type="checkbox">否
+            </td>
+        </tr>
+        <tr>
+            <td>幣種</td>
+            <td class="cb">
+                <input type="checkbox">Coin1
+                <input type="checkbox">Coin2
+                <input type="checkbox">Coin3
+            </td>
+        </tr>
+        <tr>
+            <td>價格</td>
+            <td>
+                <select>
+                    <option value="">100$~1000$</option>
+                    <option value="">1000$~10000$</option>
+                    <option value="">10000$~100000$</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>集資發起人評價</td>
+            <td class="cb">
+                <input type="checkbox"><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <input type="checkbox"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </td>
+        </tr>
+    </table> -->
+    <div class="content_text" style="border-bottom-width: 0px;">Login</div>
+    <span style="color:lightblue; user-select: none;">aaa</span>
+        <table class="login">
+            <tr>
+                <td>Account</td>
+            <td><input type="text" id="account" placeholder="Please enter username" style="margin-bottom:10px"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" placeholder="Please enter password" style="margin-bottom:10px"></td>
+            </tr>
+            <tr id="SubmitBotton" onclick="Login()"> 
+                <td> </td>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+        <div style="color: lightblue; user-select: none;">aaa</div>  
+        <div id="signup">Don't have an account yet?<a id="signup2" href="signup.html"> Sign up now</a></div>
+
+    </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

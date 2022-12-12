@@ -20,6 +20,12 @@ footer{
 	left:30%;
     z-index:2;
 }
+button{
+    font-size:20px;
+    padding:10px 30px;
+    border:2px black solid;
+    border-radius: 20px; 
+}
 .function-button{
     font-size:20px;
     padding:10px 30px;
