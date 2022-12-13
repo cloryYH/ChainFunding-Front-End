@@ -80,19 +80,23 @@ border-radius: 20px; }
     
 	<!-- create new funding project -->
     <div class="create-project">
-        <img src="../html/images/b2.png">
+        <img id="newfd-pic" src="../html/images/b2.png">
         <div class="project-settings">
-          <div class="project-name">
-            <span class="info-label-1">項目名稱 :</span>
-            <span class="info-message-1">example project1</span>
+          <div class="creating-tips">
+            <span id="ad-tip1" style="color:grey;">第一步，請將您找到的NFT商品在Opensea平台上的聯結複製到這裡</span>
           </div>
           <div class="category-link">
             <span class="info-label-2">商品連結 :</span>
-            <span class="info-message-1"><a href="#">opensea link</a></span>
+            <span class="info-message-1"><input type="text" id="newfd-link" class="search_input" style="font-size: 15px"></span>
+            <button onclick="readproject()">提交</button>
+          </div>
+          <div class="project-name">
+            <span class="info-label-1">項目名稱 :</span>
+            <span class="info-message-1" id="name-text">--</span>
           </div>
           <div class="project-price">
-            <span class="info-label-1">商品報價 :</span>
-            <span class="info-message-1">xx ETH</span>
+            <span class="info-label-1" id="price-label">商品報價 :</span>
+            <span class="info-message-1" id="price-text">--</span>
           </div>
           <hr />
 
@@ -101,7 +105,9 @@ border-radius: 20px; }
             <input type="text" class="search_input" style="font-size: 15px" placeholder="輸入您的Tag, 並用逗號分隔, 最多10個">
           </div>
           <hr /> -->
-          
+          <div class="creating-tips">
+            <span id="ad-tip2" style="color:grey;">第二步，請為您的集資項目設置方案</span>
+          </div>
           <div class="set-profit-goal">
             <span class="info-label-1">買入價</span>
           </div>

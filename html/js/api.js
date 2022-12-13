@@ -1,6 +1,7 @@
-const base_url = "https://llw.tw/api/v1"
+const base_url = "https://llw.tw/api/v1";
 const reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
 const reg2 = /^[A-Za-z0-9-_]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+const reg02 = /\B(?=(\d{3})+(?!\d))/;
 
 
 function Registration() {
@@ -109,31 +110,38 @@ function GetWalletBalance(Wtype){
     var balance;
     $.ajax(walletApi).done(function (response) {
         balance=parseFloat(response.amount).toFixed(3);
-        var reg02 = /\B(?=(\d{3})+(?!\d))/g;
         var walletid=Wtype+'-balance';
         document.getElementById(walletid).innerText=balance.toString().replace(reg02, ',');
     });
     
 }
 
-function usermenucheck(){
-    var ca=document.cookie.split(';'); 
-    if(ca.length<=1){   //如果找不到access 即未登入 跳回到登入界面
-        window.location.href = "./login.html";
+function logrequest(){
+    var ca=document.cookie.split(';');
+    var f=false;
+    for (var i=0; i<ca.length; i++){
+        var arr=ca[i].split('=');
+        if (arr[0].includes('access') && arr[1]!=null) f=true;
     }
+    if (!f) window.location.href = "./login.html"; //如果找不到access 即未登入 跳回到登入界面
+}
+function usermenucheck(){
+    logrequest();
     GetWalletBalance('weth');
     GetWalletBalance('usdt');
     GetWalletBalance('usdc');
 }
 
 function newfunding(){//新增集資
-    var ca=document.cookie.split(';'); 
-    if(ca.length<=1){   //檢查access
-        window.location.href = "./login.html";
-    }
+    logrequest();
+
     var nftId=0;
-    var address="12345678";
-    var name="abcd";
+
+    let a=document.getElementById('newfd-link');
+    var opensealink=a.value.split('/');
+    var address= opensealink[6];
+
+    var name=$('name-text').val();
     var startTime=$('#start-date').val();
     var endTime=$('#end-date').val();
     var token='weth'; //幣種
@@ -183,8 +191,8 @@ function defaultTime(){//新增集资时预设开始日期于今天 预设结束
     var d2=document.getElementById("end-date");
     d1.value=year+"-"+month+"-"+date;
     d1.min=d1.value;
-    d2.value=year+"-"+(month+1)+"-"+date;
-    d2.min=year+"-"+month+"-"+(date+1);
+    d2.value=(month==12?year+1:year)+"-"+(month==12?1:month+1)+"-"+date;
+    d2.min=d1.value;
 }
 
 function getonefunding(pjid){
@@ -220,7 +228,58 @@ function pj_show(pjid,boxid){
         timeout: 0,
         contentType: "application/json",
         success: function (response) {
+            //console.log(JSON.stringify(response));
             a.innerText=response.nftName;
+        }
+    })
+    /*
+    var address='0x3ad7ad283dab53511abdc5ff9f95a35f735e48f2';
+    var token_id='10';
+    $.ajax({
+        url: base_url + "/search/opensea?address="+address+"&token_id="+token_id,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            console.log(JSON.stringify(response));
+        }
+    })
+    */
+}
+//https://testnets.opensea.io/zh-TW/assets/goerli/0x3ad7ad283dab53511abdc5ff9f95a35f735e48f2/10
+function readproject(){
+    let a=document.getElementById('newfd-link');
+    var opensealink=a.value.split('/');
+    var address= opensealink[6];
+    var token_id= opensealink[7];
+    $.ajax({
+        url: base_url + "/search/opensea?address="+address+"&token_id="+token_id,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            var r=response.assets;
+            //onsole.log(r[0]);
+            let nftname=document.getElementById('name-text');
+            nftname.innerText=r[0].name;
+            let nftprice=document.getElementById('price-text');
+            if (r[0].top_bid!=null){
+                var p=parseFloat(r[0].top_bid).toFixed(3);
+                p=p.toString().replace(reg02, ',');
+                nftprice.innerText=p+" "+r[0].top_bid.symbol;
+            }
+            else if(r[0].last_sale!=null){
+                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(3);
+                p=p.toString().replace(reg02, ',');
+                nftprice.innerText=p+" "+r[0].last_sale.payment_token.symbol;
+                let pricelabel=document.getElementById('price-label');
+                pricelabel.innerText="最近成交價 :"
+            }
+            else{
+                nftprice.innerText=" 暫無報價";
+            }
+            let picture=document.getElementById('newfd-pic');
+            picture.src=r[0].image_original_url;
         }
     })
 }
@@ -273,3 +332,87 @@ function index_show_fundings(){
     pj_show(id2,'index-pro-2');
     pj_show(id3,'index-pro-3');
 }
+
+function transferOnload(){
+    logrequest();
+    loadinglog();
+}
+$("#bars1").click(function(){
+    if (t==0){
+        $("#SearchConditions").show();
+    }
+    else{
+        $("#SearchConditions").hide();
+    }
+    t=1-t;
+});
+function loadinglog(){//外部轉帳
+    var transferlogApi={
+        "url":base_url+"/transferlog",
+        "method": "GET",
+        "timeout": 0,
+        "async":false,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+    };
+    $.ajax(transferlogApi).done(function (response) {
+        $('.log-content').remove();
+        for (var i=0;i<response.length;i++){
+            var t=response[i].time.substring(0,19);
+            var Afrom=response[i].fromAddress;
+            var Ato=response[i].toAddress;
+            var token=response[i].token.toUpperCase();
+            var amount=parseFloat(response[i].amount).toFixed(3);
+            amount=amount.toString().replace(reg02, ',');
+            var check=response[i].transferCheck;
+            var remark=(response[i].remark==null?" ":response[i].remark);
+            $('#transferlog-table').append(
+                "<tr class=\"log-content\" style=\"background-color: white;\">\
+                    <td>"+t+"</td>\
+                    <td>"+Afrom+"</td>\
+                    <td>"+Ato+"</td>\
+                    <td>"+token+"</td>\
+                    <td>"+amount+"</td>\
+                    <td>"+check+"</td>\
+                    <td>"+remark+"</td>\
+                </tr>");
+        }
+    });
+}
+function loadinglog_user(){//內部轉帳
+    var transferlogApi={
+        "url":base_url+"/transferloguser",
+        "method": "GET",
+        "timeout": 0,
+        "async":false,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+    };
+    $.ajax(transferlogApi).done(function (response) {
+        $('.log-content').remove();
+        for (var i=0;i<response.length;i++){
+            var t=response[i].time.substring(0,19);
+            var d=new Date(response[i].time);//d用于时间排序 有空再写
+            var Afrom=response[i].from_username;
+            var Ato=response[i].to_username;
+            var token=response[i].token.toUpperCase();
+            var amount=parseFloat(response[i].amount).toFixed(3);
+            amount=amount.toString().replace(reg02, ',');
+            var check=(response[i].transferCheck==null?"1":response[i].transferCheck);
+            var remark=(response[i].remark==null?" ":response[i].remark);
+            $('#transferlog-table').append(
+                "<tr class=\"log-content\" style=\"background-color: white;\">\
+                    <td>"+t+"</td>\
+                    <td>"+Afrom+"</td>\
+                    <td>"+Ato+"</td>\
+                    <td>"+token+"</td>\
+                    <td>"+amount+"</td>\
+                    <td>"+check+"</td>\
+                    <td>"+remark+"</td>\
+                </tr>");
+        }
+    });
+}
+

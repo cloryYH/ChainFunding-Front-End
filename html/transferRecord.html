@@ -14,7 +14,7 @@
 border-radius: 20px; }
 </style>
 
-<body onload="usermenucheck()">
+<body onload="transferOnload()">
   <header style="text-align:center">
     <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top: 10px; margin-right: 80px;"></a></span>
     <span class="header_search">
@@ -23,8 +23,8 @@ border-radius: 20px; }
       <button class="header_search_button"><button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button></button>
     </span>
     <span class="dropdown">
-     <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
-     <div class="dropdown-content">
+      <button class="dropbtn"><i class="fa-solid fa-globe" style="color:navy;"></i></button>
+      <div class="dropdown-content">
          <a href="#">繁體中文</a>
          <a href="#">English</a>
       </div>
@@ -37,105 +37,25 @@ border-radius: 20px; }
   
     <div class="content_text" style="border-bottom-width: 0px;">轉帳紀錄</div>
     <span style="color:lightblue; user-select: none;" >aaa</span>
-    <table class="funding-information2" border="1">
+    <div class="record-select" style="text-align:center; font-size:24px;">
+      <b>轉帳記錄類型：</b>
+      <input type="radio" name="check" value="log1" checked="checked" onchange="loadinglog()">外部轉帳
+      <input type="radio" name="check" value="log2" onchange="loadinglog_user()">內部轉帳
+      <span style="color:lightblue; user-select: none;" >aaa</span>
+      <b>排序：</b>
+      <input type="radio" name="sort" value="log1" checked="checked">從最新開始
+      <input type="radio" name="sort" value="log2">從最舊開始
+    </div>
+    <span style="color:lightblue; user-select: none;" >aaa</span>
+    <table class="funding-information2" border="1" id="transferlog-table">
       <tr style="background-color: lightgray;">
         <th>轉帳時間</th>
         <th>轉出</th> <!--內部轉帳為用戶名or外部轉帳為錢包地址--> 
         <th>轉入</th> <!--內部轉帳為用戶名or外部轉帳為錢包地址--> 
-        <th>幣種</th>
+        <th>資產</th>
         <th>數量</th>
         <th>狀態</th>
         <th>備註</th>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr style="background-color: white;">
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxxxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
       </tr>
     </table>
     <span style="color:lightblue; user-select: none;" >aaa</span>
