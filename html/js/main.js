@@ -13,9 +13,11 @@ $("#bars1").click(function(){
 
 $(document).ready(function () {
     var ca=document.cookie.split(';');
-    if(ca.length>1){
-        acc=ca[1].split('=')[1];
-        if (acc!=null){
+    var f=false;
+    for (var i=0; i<ca.length; i++){
+        var arr=ca[i].split('=');
+        if (arr[0].includes('access') && arr[1]!=null){
+            f=true;
             $('#main-user-bt').append("<a href=\"./usermenu.html\">\
                 <i class=\"fa-solid fa-user\" style=\"color:skyblue;\"></i></a>\
                 <div class=\"dropdown-content\">\
@@ -28,7 +30,8 @@ $(document).ready(function () {
             $('#notification-bt').append("<a href=\"./notification.html\"><i class=\"fa-solid fa-bell\" style=\"color:orange;\"></i></a>");
         }
     }
-    else{
+    if (!f){
         $('#main-user-bt').append("<a href=\"./login.html\"><i class=\"fa-solid fa-user-plus\" style=\"color:grey;\"></i>登入</a>");
     }
 });
+
