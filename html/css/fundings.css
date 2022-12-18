@@ -11,6 +11,14 @@ html{
 footer{
 	background-color:rgb(200, 220, 240);
 }
+
+select{
+    font-size:20px;
+    padding:10px 30px;
+    border:2px black solid;
+    border-radius: 20px;
+}
+
 #SearchConditions{
     font-size:30px;
     font-family:Microsoft JhengHei;
