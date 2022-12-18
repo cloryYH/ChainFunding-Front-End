@@ -14,7 +14,7 @@
 border-radius: 20px; }
 </style>
 
-<body onload="logrequest()">
+<body onload="loadingUsermenu()">
   <header style="text-align:center">
     <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin: top 10px;"></a></span>
     <span class="header_search">
@@ -42,17 +42,18 @@ border-radius: 20px; }
           <hr />
           <div class="user-username">
             <span class="info-label-1">用戶名 :</span>
-            <span class="info-message-1">user123</span>
+            <span class="info-message-1" id="username-text">--</span>
           </div>
           <div class="user-email">
             <span class="info-label-1">Email地址 :</span>
-            <span class="info-message-1">example@gmail.com</span>
+            <span class="info-message-1" id="email-text">--</span>
           </div>
+          <!-- no time do this
           <div style="color: lightblue; user-select: none;">aaa</div>
           <div class="funding buttons">
             <button class="bt-add-wallet"><i class="fa-solid fa-key" style="color: gray;"></i> 更改密碼</button>
-            <!-- <button class="bt-add-wallet">綁定錢包</button> 如果有綁定錢包了 按鈕會變成更改錢包 明天再做 -->
           </div>
+          -->
           <div style="color: lightblue; user-select: none;">aaa</div>
           <div class="funding buttons">
             <button class="bt-add-wallet"><i class="fa-solid fa-outdent" style="color: purple;"></i> 申請出金</button>

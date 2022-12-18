@@ -125,8 +125,35 @@ function logrequest(){
     }
     if (!f) window.location.href = "./login.html"; //如果找不到access 即未登入 跳回到登入界面
 }
-function usermenucheck(){
+function loadingWallet(){
     logrequest();
+    var userinfo={
+        "url":base_url+"/walletaddress",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        }
+    };
+    $.ajax(userinfo).done(function (response) {
+        let a=document.getElementById('W-con');
+        if (response.length==0){
+            a.innerText='未綁定';
+        }
+        else{
+            a.innerText='已綁定';
+            $('.user-wallet-address-text').append("\
+              <span class=\"info-label-1\">已綁定的錢包地址</span>");
+            for (var i=0;i<response.length;i++){
+                $('.user-wallet-address-text').append("\
+                <div>\
+                <span>"+response[i].id+"</span>\
+                <span>"+response[i].walletAddress+"</span>\
+                </div>");
+            }
+        }
+    });
+    
     GetWalletBalance('weth');
     GetWalletBalance('usdt');
     GetWalletBalance('usdc');
@@ -135,13 +162,13 @@ function usermenucheck(){
 function newfunding(){//新增集資
     logrequest();
 
-    var nftId=0;
+    var nftId=1;
 
     let a=document.getElementById('newfd-link');
     var opensealink=a.value.split('/');
     var address= opensealink[6];
-
-    var name=$('name-text').val();
+    let n=document.getElementById('name-text');
+    var name=n.innerText;
     var startTime=$('#start-date').val();
     var endTime=$('#end-date').val();
     var token='weth'; //幣種
@@ -175,12 +202,16 @@ function newfunding(){//新增集資
         contentType: "application/json",
         data: JSON.stringify(data),
         success: function (response) {
-            alert(response.status);
+            alert("成功創建集資項目！您可以在個人追蹤中查看新建立的項目。");
+            window.location.href = "./tracklist.html";
         },
         error: function (jqXHR) {
-            alert(jqXHR);
+            alert("創建失敗！請重新檢查您的投資內容。");
         }
     })
+}
+function timepad(t){
+    return t.toString().padStart(2,'0');
 }
 function defaultTime(){//新增集资时预设开始日期于今天 预设结束日期为下个月
     var today=new Date();
@@ -189,9 +220,9 @@ function defaultTime(){//新增集资时预设开始日期于今天 预设结束
     var date=today.getDate();
     var d1=document.getElementById("start-date");
     var d2=document.getElementById("end-date");
-    d1.value=year+"-"+month+"-"+date;
+    d1.value=year+"-"+timepad(month)+"-"+timepad(date);
     d1.min=d1.value;
-    d2.value=(month==12?year+1:year)+"-"+(month==12?1:month+1)+"-"+date;
+    d2.value=(month==12?year+1:year)+"-"+(month==12?"01":timepad(month+1))+"-"+timepad(date);
     d2.min=d1.value;
 }
 
@@ -259,9 +290,13 @@ function readproject(){
         contentType: "application/json",
         success: function (response) {
             var r=response.assets;
-            //onsole.log(r[0]);
+            console.log(r[0]);
+
+            let picture=document.getElementById('newfd-pic');
+            picture.src=r[0].image_preview_url;
             let nftname=document.getElementById('name-text');
             nftname.innerText=r[0].name;
+
             let nftprice=document.getElementById('price-text');
             if (r[0].top_bid!=null){
                 var p=parseFloat(r[0].top_bid).toFixed(3);
@@ -278,8 +313,6 @@ function readproject(){
             else{
                 nftprice.innerText=" 暫無報價";
             }
-            let picture=document.getElementById('newfd-pic');
-            picture.src=r[0].image_original_url;
         }
     })
 }
@@ -333,19 +366,6 @@ function index_show_fundings(){
     pj_show(id3,'index-pro-3');
 }
 
-function transferOnload(){
-    logrequest();
-    loadinglog();
-}
-$("#bars1").click(function(){
-    if (t==0){
-        $("#SearchConditions").show();
-    }
-    else{
-        $("#SearchConditions").hide();
-    }
-    t=1-t;
-});
 function loadinglog(){//外部轉帳
     var transferlogApi={
         "url":base_url+"/transferlog",
@@ -416,3 +436,44 @@ function loadinglog_user(){//內部轉帳
     });
 }
 
+function loadingUsermenu(){
+    logrequest();
+    var userinfo={
+        "url":base_url+"/auth/users/me/",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Bearer "+$.cookie('access')
+        },
+    };
+    $.ajax(userinfo).done(function (response) {
+        let a1=document.getElementById('username-text');
+        a1.innerText=response.username;
+        let a2=document.getElementById('email-text');
+        a2.innerText=response.email;
+    });
+}
+
+function addnewwallet(){
+    var wallet=prompt("請將您可用的錢包地址複製在輸入框內","");
+    if (wallet!=null && wallet !=''){
+        var data = {"walletAddress": wallet}
+        //console.log(data);
+        $.ajax({
+            url: base_url + "/walletaddress",
+            method: "POST",
+            timeout: 0,
+            headers: {"Authorization": "Bearer "+$.cookie('access')},
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+                alert("新增錢包成功");
+                location.reload();
+            },
+            error: function (jqXHR) {
+                alert("創建失敗！請重新檢查您的內容。");
+            }
+        })
+    }
+
+}
