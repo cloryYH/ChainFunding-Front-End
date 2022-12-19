@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../html/css/fundings.css">
     <script src="https://kit.fontawesome.com/d81c0e5457.js" crossorigin="anonymous"></script>
-    <title>ChainFunding | Add Project</title>
+    <title>ChainFunding | purchase the rights of the item</title>
 </head>
 
 <style>
@@ -18,12 +18,12 @@ border-radius: 20px; }
 border-radius: 20px; }
 </style>
 
-<body onload="defaultTime();logrequest()">
+<body onload="defaultTime()">
     <header style="text-align:center">
       <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top: 10px; margin-right: 80px;"></a></span>
       <span class="header_search">
         <!-- <i id="bars1" class="fa-solid fa-bars" style="color: black; font-size:24px;"></i> -->
-        <input type="text" class="search_input" style="font-size: 24px; color: black;" placeholder="Project Search">
+        <input type="text" class="search_input" style="font-size: 24px; color: black;" placeholder="Search Project">
         <button class="header_search_button"><button class="header_search_button"><i class="fa-solid fa-magnifying-glass" style="font-size: 24px;color:black;"></i></button></button>
       </span>
       <span class="dropdown">
@@ -38,7 +38,7 @@ border-radius: 20px; }
       <span style="color:white; user-select: none;" >aa</span>
       <span id="main-user-bt" class="dropdown"></span>
     </header>
-    <div class="content_text" style="border-bottom-width: 0px;">Add Your Project</div>
+    <div class="content_text" style="border-bottom-width: 0px;">purchase the rights of the item</div>
     <span style="color:lightblue; user-select: none;" >aaa</span>
     <!-- <table id="SearchConditions" style="text-align: center">
         <tr>
@@ -83,19 +83,10 @@ border-radius: 20px; }
         <img id="newfd-pic" src="../html/images/b2.png">
         <div class="project-settings">
           <div class="category-link">
-            <span class="info-label-2">Product Link</span>
-            <div>
-              <span class="info-message-1"><input type="text" id="newfd-link" class="search_input" placeholder="Please enter the NFT product link on the OpenSea platform" style="font-size: 15px"></span>
-            </div>
+            <span class="info-label-2"></span>
           </div>
-          <button onclick="readproject()" style="margin-top: 15px;"><i class="fa-solid fa-check" style="color: green;"></i> Apply</button>
           <div class="project-name">
-            <span class="info-label-1">Project Name :</span>
-            <span class="info-message-1" id="name-text">--</span>
-          </div>
-          <div class="project-price">
-            <span class="info-label-1" id="price-label">Product Quotation :</span>
-            <span class="info-message-1" id="price-text">--</span>
+            <span class="info-label-1" style="font-size: 30px;">Product Name</span>
           </div>
           <hr />
 
@@ -104,53 +95,18 @@ border-radius: 20px; }
             <input type="text" class="search_input" style="font-size: 15px" placeholder="輸入您的Tag, 並用逗號分隔, 最多10個">
           </div>
           <hr /> -->
-          <div class="creating-tips">
-            <span id="ad-tip2" style="color:grey;">Please set an investment strategy for the crowdfunding project</span>
-          </div>
           <div class="set-profit-goal">
-            <span class="info-label-1">Buying Price</span>
+            <span class="info-label-1">Purchase of rights share</span>
           </div>
           <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="Please enter project planned buying price">
-
-          <div class="set-profit-goal">
-            <span class="info-label-1">Selling Price</span>
-          </div>
-          <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" id="sell-price" style="font-size: 15px" placeholder="Please enter project planned selling price">
-
-          <div class="set-profit-goal">
-            <span class="info-label-1">Stop Price</span>
-          </div>
-          <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" id="stop-price" style="font-size: 15px" placeholder="Please enter project planned stop price">
-
-          <div class="min-ratio">
-            <span class="info-label-1">Minimum Participation Ratio（Unit：%）</span>
-          </div>
-            <div class="min-ratio"></div>
-            <input type="text" class="search_input" id="lowest-share" style="font-size: 15px" placeholder="Not less than 0.1% and not more than 10%">
-            
-            <div class="set-iniTime">
-              <span class="info-label-1">Project Start Date</span>
-              <div> </div>
-              <span class="info-message-1">
-                <input type="date" id="start-date"
-                value=2022-11-17 min="2022-11-16" max="2023-12-31">
-              </span>
-            </div>
-  
+          <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="Please enter the rights share to be purchased">
             <div class="set-endTime">
-              <span class="info-label-1">Project End Date</span>
-              <div> </div>
-              <span class="info-message-1">
-                <input type="date" id="end-date"
-                value="2022-11-17" min="2022-11-17" max="2023-12-31">
-              </span>
+              <span class="info-label-1">Estimated price :</span>
+              <span class="info-label-1">Price1</span>
             </div>
           <span style="color:lightblue; user-select: none;">aaa</span>
           <div class="button" style="color: white;">
-            <button class="bt-go-wallet function-button" onclick="newfunding()"><i class="fa-solid fa-plus" style="color: gray;"></i> Add Project</button>
+            <button class="bt-go-wallet function-button" onclick="newfunding()"><i class="fa-solid fa-plus" style="color: gray;"></i> Confirm purchase</button>
           </div>
         </div>
     </div>
