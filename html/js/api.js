@@ -147,8 +147,8 @@ function loadingWallet(){
             for (var i=0;i<response.length;i++){
                 $('.user-wallet-address-text').append("\
                 <div>\
-                <span>"+response[i].id+"</span>\
-                <span>"+response[i].walletAddress+"</span>\
+                  <span>"+response[i].id+"</span>\
+                  <span>"+response[i].walletAddress+"</span>\
                 </div>");
             }
         }
@@ -162,10 +162,10 @@ function loadingWallet(){
 function newfunding(){//新增集資
     logrequest();
 
-    var nftId=1;
-
     let a=document.getElementById('newfd-link');
     var opensealink=a.value.split('/');
+
+    var nftId=opensealink[7];
     var address= opensealink[6];
     let n=document.getElementById('name-text');
     var name=n.innerText;
@@ -176,7 +176,7 @@ function newfunding(){//新增集資
     var sellPrice= $('#sell-price').val();
     //var gasPrice= 0.001;手續費自動帶0.1%
     var stopPrice= $('#stop-price').val();
-    var lowest_share= $('#lowest-share').val();// 最低參與比例
+    var lowest_share= $('#lowest-share').val()/100;// 最低參與比例
     
     var data = {
         "nftId": nftId,
@@ -249,18 +249,35 @@ function getallfunding(){
     })
 }
 //通过id取得项目具体的链接和名字
-function pj_show(pjid,boxid){
+function pj_show(pjid,boxid,boxpicid){
     var url="fundings.html?id="+pjid;
     let a=document.getElementById(boxid);
+    var address;
+    var nftid;
     a.href=url;
     $.ajax({
         url: base_url + "/fundingprojects/" + pjid,
         method: "GET",
         timeout: 0,
+        async:false,
         contentType: "application/json",
         success: function (response) {
             //console.log(JSON.stringify(response));
+            address=response.nftContractAddress;
+            nftid=response.nftId;
             a.innerText=response.nftName;
+        }
+    })
+    $.ajax({
+        url: base_url + "/search/opensea?address="+address+"&token_id="+nftid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            var r=response.assets;
+            let picture=document.getElementById(boxpicid);
+            picture.src=r[0].image_preview_url;
+            
         }
     })
     /*
@@ -320,14 +337,22 @@ function readproject(){
 function pj_go(){
     var url=window.location.href;
     var pjid=url.split("=")[1];
+    var address;
+    var nftid;
     $.ajax({
         url: base_url + "/fundingprojects/" + pjid,
         method: "GET",
         timeout: 0,
+        async:false,
         contentType: "application/json",
         success: function (response) {
+            address=response.nftContractAddress;
+            nftid=response.nftId;
+            //console.log(JSON.stringify(response));
             var token="  "+response.token.toUpperCase();
             
+            let title=document.getElementById('funding-title');
+            title.innerText=response.nftName;
             let raiser=document.getElementById('sponser-name');
             raiser.innerText=response.fundraiser_name;
 
@@ -354,16 +379,36 @@ function pj_go(){
 
             let end_time=document.getElementById('end-time');
             end_time.innerText=response.endTime;
+
+            if (response.shares_sum_scale==0){
+                $('.participate-project').append("\
+                <button class=\"bt-add-wallet\" onclick=\"gotobuyshare()\"><i class=\"fa-solid fa-indent\" style=\"color: red;\"></i> 購買權利</button>\
+                <button class=\"bt-add-wallet\" onclick=\"gotosellshare()\"><i class=\"fa-solid fa-outdent\" style=\"color: green;\"></i> 賣出權利</button>");
+            }
+        }
+    })
+    $.ajax({
+        url: base_url + "/search/opensea?address="+address+"&token_id="+nftid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            var r=response.assets;
+            //console.log(r[0]);
+
+            let picture=document.getElementById('funding-pic');
+            picture.src=r[0].image_preview_url;
+            
         }
     })
 }
 function index_show_fundings(){
-    var id1=1;//首页有三个展示项目的框 所以预选3个id 
-    var id2=2;//可以写成乱数产生 也可以按最热门的项目搜寻 
-    var id3=3;//测试方便就直接123了
-    pj_show(id1,'index-pro-1');
-    pj_show(id2,'index-pro-2');
-    pj_show(id3,'index-pro-3');
+    var id1=19;//首页有三个展示项目的框 所以预选3个id 
+    var id2=18;//可以写成乱数产生 也可以按最热门的项目搜寻 
+    var id3=17;//测试方便就直接123了
+    pj_show(id1,'index-pro-1','index-pro-pic-1');
+    pj_show(id2,'index-pro-2','index-pro-pic-2');
+    pj_show(id3,'index-pro-3','index-pro-pic-3');
 }
 
 function loadinglog(){//外部轉帳
@@ -386,7 +431,7 @@ function loadinglog(){//外部轉帳
             var amount=parseFloat(response[i].amount).toFixed(3);
             amount=amount.toString().replace(reg02, ',');
             var check=response[i].transferCheck;
-            var remark=(response[i].remark==null?" ":response[i].remark);
+            var remark=(response[i].remark==null? " ":response[i].remark);
             $('#transferlog-table').append(
                 "<tr class=\"log-content\" style=\"background-color: white;\">\
                     <td>"+t+"</td>\
@@ -475,5 +520,78 @@ function addnewwallet(){
             }
         })
     }
-
+}
+function transferOnload(){
+    logrequest();
+    loadinglog();
+}
+function gotobuyshare(){
+    var pjid=window.location.href.split("=")[1];
+    var url="buyingfd.html?id="+pjid;
+    window.open(url);
+}
+function gotosellshare(){
+    var pjid=window.location.href.split("=")[1];
+    var url="sellingfd.html?id="+pjid;
+    window.open(url);
+}
+function loadingsharetrade(){
+    logrequest();
+    var pjid=window.location.href.split("=")[1];
+    var address;
+    var nftid;
+    $.ajax({
+        url: base_url + "/fundingprojects/" + pjid,
+        method: "GET",
+        timeout: 0,
+        async:false,
+        contentType: "application/json",
+        success: function (response) {
+            address=response.nftContractAddress;
+            nftid=response.nftId;
+            let title=document.getElementById('funding-title');
+            title.innerText=response.nftName;
+        }
+    })
+    $.ajax({
+        url: base_url + "/search/opensea?address="+address+"&token_id="+nftid,
+        method: "GET",
+        timeout: 0,
+        contentType: "application/json",
+        success: function (response) {
+            var r=response.assets;
+            //console.log(r[0]);
+            let picture=document.getElementById('funding-pic');
+            picture.src=r[0].image_preview_url;
+            
+        }
+    })
+}
+function sellshare(){
+    var pjid=window.location.href.split("=")[1];
+    var share=$('#total-sell-share').val();
+    var token=$('#token-option').val();
+    var price=$('#total-sell-price').val();
+    var data = {
+        "fundingProject":pjid,
+        "share":share,
+        "token":token,
+        "price":price
+    }
+    //console.log(data);
+    $.ajax({
+        url: base_url + "/fundingsharessold",
+        method: "POST",
+        timeout: 0,
+        headers: {"Authorization": "Bearer "+$.cookie('access')},
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function (response) {
+            alert("操作完成，您的這些集資份額已經被放在市場上等待買家。");
+            window.location.href = "./tracklist.html";
+        },
+        error: function (jqXHR) {
+            alert("操作失敗！請重新檢查您的內容。");
+        }
+    })
 }
