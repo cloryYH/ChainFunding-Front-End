@@ -18,7 +18,7 @@ border-radius: 20px; }
 border-radius: 20px; }
 </style>
 
-<body onload="defaultTime()">
+<body onload="loadingsharetrade()">
     <header style="text-align:center">
       <span><a href="./ChainFunding.html"><img src="../html/images/logo.jpg" align="center" style="margin-top: 10px; margin-right: 80px;"></a></span>
       <span class="header_search">
@@ -78,15 +78,15 @@ border-radius: 20px; }
         </tr>
     </table> -->
     
-	<!-- create new funding project -->
+	<!-- funding project -->
     <div class="create-project">
-        <img id="newfd-pic" src="../html/images/b2.png">
+        <img id="funding-pic" src="../html/images/b2.png">
         <div class="project-settings">
           <div class="category-link">
             <span class="info-label-2"></span>
           </div>
           <div class="project-name">
-            <span class="info-label-1" style="font-size: 30px;">Product Name</span>
+            <span class="info-label-1" style="font-size: 30px;" id="funding-title">Product Name</span>
           </div>
           <hr />
 
@@ -102,26 +102,26 @@ border-radius: 20px; }
             <span class="info-label-1">出售權利份額</span>
           </div>
           <div class="set-profit-goal"></div>
-          <input type="text" class="search_input" id="buy-price" style="font-size: 15px" placeholder="請輸入欲出售之權利份額 (小於等於您所參與的最大份額)">
+          <input type="text" class="search_input" id="total-sell-share" style="font-size: 15px" placeholder="請輸入欲出售之權利份額 (小於等於您所參與的最大份額)">
 
           <div class="set-profit-goal">
             <span class="info-label-1">交易幣種</span>
           </div>
           <div class="set-profit-goal"></div>
-          <select>
+          <select id="token-option">
             <option>請選擇交易幣種</option>
-            <option>USDC</option>
-            <option>USDT</option>
-            <option>WETH</option>
-        </select>
+            <option value="usdc">USDC</option>
+            <option value="usdt">USDT</option>
+            <option value="weth">WETH</option>
+          </select>
             <div class="set-endTime">
               <span class="info-label-1">出售總價格</span>
               <div> </div>
-              <input type="text" class="search_input" id="sell-price" style="font-size: 15px" placeholder="請輸入欲出售之總價格">
+              <input type="text" class="search_input" id="total-sell-price" style="font-size: 15px" placeholder="請輸入欲出售之總價格">
             </div>
           <span style="color:lightblue; user-select: none;">aaa</span>
           <div class="button" style="color: white;">
-            <button class="bt-go-wallet function-button" onclick="newfunding()"><i class="fa-solid fa-plus" style="color: gray;"></i> 確定售出</button>
+            <button class="bt-go-wallet function-button" onclick="sellshare()"><i class="fa-solid fa-plus" style="color: gray;"></i> 確定售出</button>
           </div>
         </div>
     </div>
