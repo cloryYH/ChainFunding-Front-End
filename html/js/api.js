@@ -370,11 +370,10 @@ function pj_go(){
             raising.innerText=parseFloat(response.shares_sum).toFixed(6)+token;
 
             let raising_percentage=document.getElementById('raising-progress-text');
-            raising_percentage.innerText=parseFloat(response.shares_sum_scale)+" %";
+            raising_percentage.innerText=parseFloat(response.shares_sum_scale*100)+" %";
 
             let lowest_share=document.getElementById('min-part-text');
-            //lowest_share.innerText=parseFloat(response.lowest_share).toFixed(6);
-            lowest_share.innerText="10 %";
+            lowest_share.innerText=parseFloat(response.lowest_share*100)+" %";
 
 
             let end_time=document.getElementById('end-time');
