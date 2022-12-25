@@ -147,7 +147,6 @@ function loadingWallet(){
             for (var i=0;i<response.length;i++){
                 $('.user-wallet-address-text').append("\
                 <div>\
-                  <span>"+response[i].id+"</span>\
                   <span>"+response[i].walletAddress+"</span>\
                 </div>");
             }
