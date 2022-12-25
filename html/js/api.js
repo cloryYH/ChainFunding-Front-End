@@ -595,3 +595,28 @@ function sellshare(){
         }
     })
 }
+
+function joinshare(){
+    var pjid=window.location.href.split("=")[1];
+    var share=$('#buy-price').val();
+    var data = {
+        "fundingProject":pjid,
+        "share":share
+    }
+    //console.log(data);
+    $.ajax({
+        url: base_url + "/fundingshares",
+        method: "POST",
+        timeout: 0,
+        headers: {"Authorization": "Bearer "+$.cookie('access')},
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function (response) {
+            alert("成功加入集資，您可以在錢包和追蹤中查看。");
+            window.location.href = "./tracklist.html";
+        },
+        error: function (jqXHR) {
+            alert("操作失敗！請重新檢查您的內容。");
+        }
+    })
+}
