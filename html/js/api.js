@@ -109,9 +109,9 @@ function GetWalletBalance(Wtype){
     };
     var balance;
     $.ajax(walletApi).done(function (response) {
-        balance=parseFloat(response.amount).toFixed(3);
+        balance=parseFloat(response.amount).toFixed(6);
         var walletid=Wtype+'-balance';
-        document.getElementById(walletid).innerText=balance.toString().replace(reg02, ',');
+        document.getElementById(walletid).innerText=balance.toString();
     });
     
 }
@@ -315,13 +315,13 @@ function readproject(){
 
             let nftprice=document.getElementById('price-text');
             if (r[0].top_bid!=null){
-                var p=parseFloat(r[0].top_bid).toFixed(3);
-                p=p.toString().replace(reg02, ',');
+                var p=parseFloat(r[0].top_bid).toFixed(6);
+                p=p.toString();
                 nftprice.innerText=p+" "+r[0].top_bid.symbol;
             }
             else if(r[0].last_sale!=null){
-                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(3);
-                p=p.toString().replace(reg02, ',');
+                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(6);
+                p=p.toString();
                 nftprice.innerText=p+" "+r[0].last_sale.payment_token.symbol;
                 let pricelabel=document.getElementById('price-label');
                 pricelabel.innerText="最近成交價 :"
@@ -357,23 +357,23 @@ function pj_go(){
 
 
             let text_buy=document.getElementById('buy-price-text');
-            text_buy.innerText=parseFloat(response.buyPrice).toFixed(3)+token;
+            text_buy.innerText=parseFloat(response.buyPrice).toFixed(6)+token;
             
             let text_sell=document.getElementById('sell-price-text');
-            text_sell.innerText=parseFloat(response.sellPrice).toFixed(3)+token;
+            text_sell.innerText=parseFloat(response.sellPrice).toFixed(6)+token;
             
             let text_stop=document.getElementById('stop-price-text');
-            text_stop.innerText=parseFloat(response.stopPrice).toFixed(3)+token;
+            text_stop.innerText=parseFloat(response.stopPrice).toFixed(6)+token;
 
 
             let raising=document.getElementById('raising-text');
-            raising.innerText=parseFloat(response.shares_sum).toFixed(3)+token;
+            raising.innerText=parseFloat(response.shares_sum).toFixed(6)+token;
 
             let raising_percentage=document.getElementById('raising-progress-text');
             raising_percentage.innerText=parseFloat(response.shares_sum_scale)+" %";
 
             let lowest_share=document.getElementById('min-part-text');
-            lowest_share.innerText=parseFloat(response.lowest_share).toFixed(3)+token;
+            lowest_share.innerText=parseFloat(response.lowest_share).toFixed(6)+token;
 
 
             let end_time=document.getElementById('end-time');
@@ -427,8 +427,8 @@ function loadinglog(){//外部轉帳
             var Afrom=response[i].fromAddress;
             var Ato=response[i].toAddress;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(3);
-            amount=amount.toString().replace(reg02, ',');
+            var amount=parseFloat(response[i].amount).toFixed(6);
+            amount=amount.toString();
             var check=response[i].transferCheck;
             var remark=(response[i].remark==null? " ":response[i].remark);
             $('#transferlog-table').append(
@@ -462,8 +462,8 @@ function loadinglog_user(){//內部轉帳
             var Afrom=response[i].from_username;
             var Ato=response[i].to_username;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(3);
-            amount=amount.toString().replace(reg02, ',');
+            var amount=parseFloat(response[i].amount).toFixed(6);
+            amount=amount.toString();
             var check=(response[i].transferCheck==null?"1":response[i].transferCheck);
             var remark=(response[i].remark==null?" ":response[i].remark);
             $('#transferlog-table').append(
