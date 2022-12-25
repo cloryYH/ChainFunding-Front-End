@@ -109,9 +109,9 @@ function GetWalletBalance(Wtype){
     };
     var balance;
     $.ajax(walletApi).done(function (response) {
-        balance=parseFloat(response.amount).toFixed(3);
+        balance=parseFloat(response.amount).toFixed(6);
         var walletid=Wtype+'-balance';
-        document.getElementById(walletid).innerText=balance.toString().replace(reg02, ',');
+        document.getElementById(walletid).innerText=balance.toString();
     });
     
 }
@@ -202,7 +202,7 @@ function newfunding(){//新增集資
         data: JSON.stringify(data),
         success: function (response) {
             alert("成功創建集資項目！您可以在個人追蹤中查看新建立的項目。");
-            window.location.href = "./tracklist.html";
+            window.location.href = "./ChainFunding.html";
         },
         error: function (jqXHR) {
             alert("創建失敗！請重新檢查您的投資內容。");
@@ -315,13 +315,13 @@ function readproject(){
 
             let nftprice=document.getElementById('price-text');
             if (r[0].top_bid!=null){
-                var p=parseFloat(r[0].top_bid).toFixed(3);
-                p=p.toString().replace(reg02, ',');
+                var p=parseFloat(r[0].top_bid).toFixed(6);
+                p=p.toString();
                 nftprice.innerText=p+" "+r[0].top_bid.symbol;
             }
             else if(r[0].last_sale!=null){
-                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(3);
-                p=p.toString().replace(reg02, ',');
+                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(6);
+                p=p.toString();
                 nftprice.innerText=p+" "+r[0].last_sale.payment_token.symbol;
                 let pricelabel=document.getElementById('price-label');
                 pricelabel.innerText="最近成交價 :"
@@ -357,23 +357,24 @@ function pj_go(){
 
 
             let text_buy=document.getElementById('buy-price-text');
-            text_buy.innerText=parseFloat(response.buyPrice).toFixed(3)+token;
+            text_buy.innerText=parseFloat(response.buyPrice).toFixed(6)+token;
             
             let text_sell=document.getElementById('sell-price-text');
-            text_sell.innerText=parseFloat(response.sellPrice).toFixed(3)+token;
+            text_sell.innerText=parseFloat(response.sellPrice).toFixed(6)+token;
             
             let text_stop=document.getElementById('stop-price-text');
-            text_stop.innerText=parseFloat(response.stopPrice).toFixed(3)+token;
+            text_stop.innerText=parseFloat(response.stopPrice).toFixed(6)+token;
 
 
             let raising=document.getElementById('raising-text');
-            raising.innerText=parseFloat(response.shares_sum).toFixed(3)+token;
+            raising.innerText=parseFloat(response.shares_sum).toFixed(6)+token;
 
             let raising_percentage=document.getElementById('raising-progress-text');
             raising_percentage.innerText=parseFloat(response.shares_sum_scale)+" %";
 
             let lowest_share=document.getElementById('min-part-text');
-            lowest_share.innerText=parseFloat(response.lowest_share).toFixed(3)+token;
+            //lowest_share.innerText=parseFloat(response.lowest_share).toFixed(6);
+            lowest_share.innerText="10 %";
 
 
             let end_time=document.getElementById('end-time');
@@ -402,7 +403,7 @@ function pj_go(){
     })
 }
 function index_show_fundings(){
-    var id1=19;//首页有三个展示项目的框 所以预选3个id 
+    var id1=26;//首页有三个展示项目的框 所以预选3个id 
     var id2=18;//可以写成乱数产生 也可以按最热门的项目搜寻 
     var id3=17;//测试方便就直接123了
     pj_show(id1,'index-pro-1','index-pro-pic-1');
@@ -427,8 +428,8 @@ function loadinglog(){//外部轉帳
             var Afrom=response[i].fromAddress;
             var Ato=response[i].toAddress;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(3);
-            amount=amount.toString().replace(reg02, ',');
+            var amount=parseFloat(response[i].amount).toPrecision(8);
+            amount=amount.toString();
             var check=response[i].transferCheck;
             var remark=(response[i].remark==null? " ":response[i].remark);
             $('#transferlog-table').append(
@@ -462,8 +463,8 @@ function loadinglog_user(){//內部轉帳
             var Afrom=response[i].from_username;
             var Ato=response[i].to_username;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(3);
-            amount=amount.toString().replace(reg02, ',');
+            var amount=parseFloat(response[i].amount).toPrecision(8);
+            amount=amount.toString();
             var check=(response[i].transferCheck==null?"1":response[i].transferCheck);
             var remark=(response[i].remark==null?" ":response[i].remark);
             $('#transferlog-table').append(
