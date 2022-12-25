@@ -320,7 +320,7 @@ function readproject(){
                 nftprice.innerText=p+" "+r[0].top_bid.symbol;
             }
             else if(r[0].last_sale!=null){
-                var p=parseFloat(r[0].last_sale.payment_token.eth_price).toFixed(6);
+                var p=parseFloat(r[0].last_sale.total_price).toFixed(6)*10^(-18);
                 p=p.toString();
                 nftprice.innerText=p+" "+r[0].last_sale.payment_token.symbol;
                 let pricelabel=document.getElementById('price-label');
@@ -380,7 +380,7 @@ function pj_go(){
             let end_time=document.getElementById('end-time');
             end_time.innerText=response.endTime;
 
-            if (response.shares_sum_scale==0){
+            if (response.shares_sum_scale!=0){
                 $('.participate-project').append("\
                 <button class=\"bt-add-wallet\" onclick=\"gotobuyshare()\"><i class=\"fa-solid fa-indent\" style=\"color: red;\"></i> 購買權利</button>\
                 <button class=\"bt-add-wallet\" onclick=\"gotosellshare()\"><i class=\"fa-solid fa-outdent\" style=\"color: green;\"></i> 賣出權利</button>");
@@ -428,9 +428,10 @@ function loadinglog(){//外部轉帳
             var Afrom=response[i].fromAddress;
             var Ato=response[i].toAddress;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toPrecision(8);
+            var amount=parseFloat(response[i].amount).toPrecision(4);
             amount=amount.toString();
-            var check=response[i].transferCheck;
+            //var check=response[i].transferCheck;
+            var check=(response[i].transferCheck==1 || response[i].transferCheck=="1" ? "成功":"異常");
             var remark=(response[i].remark==null? " ":response[i].remark);
             $('#transferlog-table').append(
                 "<tr class=\"log-content\" style=\"background-color: white;\">\
@@ -463,9 +464,10 @@ function loadinglog_user(){//內部轉帳
             var Afrom=response[i].from_username;
             var Ato=response[i].to_username;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toPrecision(8);
+            var amount=parseFloat(response[i].amount).toPrecision(4);
             amount=amount.toString();
-            var check=(response[i].transferCheck==null?"1":response[i].transferCheck);
+             //var check=response[i].transferCheck;
+            var check=(response[i].transferCheck==1 || response[i].transferCheck=="1" ? "成功":"異常");
             var remark=(response[i].remark==null?" ":response[i].remark);
             $('#transferlog-table').append(
                 "<tr class=\"log-content\" style=\"background-color: white;\">\
@@ -597,8 +599,8 @@ function sellshare(){
 }
 
 function joinshare(){
-    var pjid=window.location.href.split("=")[1];
-    var share=$('#buy-price').val();
+    var pjid=parseInt(window.location.href.split("=")[1]);
+    var share=parseFloat($('#buy-price').val());
     var data = {
         "fundingProject":pjid,
         "share":share
