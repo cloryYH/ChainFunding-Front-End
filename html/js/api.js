@@ -202,7 +202,7 @@ function newfunding(){//新增集資
         data: JSON.stringify(data),
         success: function (response) {
             alert("成功創建集資項目！您可以在個人追蹤中查看新建立的項目。");
-            window.location.href = "./tracklist.html";
+            window.location.href = "./ChainFunding.html";
         },
         error: function (jqXHR) {
             alert("創建失敗！請重新檢查您的投資內容。");
@@ -373,7 +373,8 @@ function pj_go(){
             raising_percentage.innerText=parseFloat(response.shares_sum_scale)+" %";
 
             let lowest_share=document.getElementById('min-part-text');
-            lowest_share.innerText=parseFloat(response.lowest_share).toFixed(6)+token;
+            //lowest_share.innerText=parseFloat(response.lowest_share).toFixed(6);
+            lowest_share.innerText="10 %";
 
 
             let end_time=document.getElementById('end-time');
@@ -402,7 +403,7 @@ function pj_go(){
     })
 }
 function index_show_fundings(){
-    var id1=19;//首页有三个展示项目的框 所以预选3个id 
+    var id1=26;//首页有三个展示项目的框 所以预选3个id 
     var id2=18;//可以写成乱数产生 也可以按最热门的项目搜寻 
     var id3=17;//测试方便就直接123了
     pj_show(id1,'index-pro-1','index-pro-pic-1');
@@ -427,7 +428,7 @@ function loadinglog(){//外部轉帳
             var Afrom=response[i].fromAddress;
             var Ato=response[i].toAddress;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(6);
+            var amount=parseFloat(response[i].amount).toPrecision(8);
             amount=amount.toString();
             var check=response[i].transferCheck;
             var remark=(response[i].remark==null? " ":response[i].remark);
@@ -462,7 +463,7 @@ function loadinglog_user(){//內部轉帳
             var Afrom=response[i].from_username;
             var Ato=response[i].to_username;
             var token=response[i].token.toUpperCase();
-            var amount=parseFloat(response[i].amount).toFixed(6);
+            var amount=parseFloat(response[i].amount).toPrecision(8);
             amount=amount.toString();
             var check=(response[i].transferCheck==null?"1":response[i].transferCheck);
             var remark=(response[i].remark==null?" ":response[i].remark);
